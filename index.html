@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaundroPlus - Premium Laundry</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <meta name="description"
+        content="LaundroPlus offers premium laundry and dry cleaning services with a focus on luxury care and meticulous attention to detail.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="LaundroPlus Logo" class="logo-img">
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#business">For Business</a></li>
+                <li><a href="#outlets">Outlets</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="header-contact">
+                <a href="tel:+94742555515" class="phone-link">+94 74 255 5515</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-slides">
+                <div class="hero-slide active"
+                    style="background-image: url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&q=80&w=2071');">
+                </div>
+                <div class="hero-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&q=80&w=2070');">
+                </div>
+                <div class="hero-slide" style="background-image: url('banner\ one.png');">
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('banner\ two.png');">
+            </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('banner\ three.png');">
+            </div>
+            <div class="hero-slide" style="background-image: url('banner\ four.png');">
+            </div>
+            <div class="hero-slide" style="background-image: url('banner\ five.png');">
+            </div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="hero-subtitle"></span>
+                <h1 class="hero-title">Premium Care for Your Luxury Wear</h1>
+                <p class="hero-description">We don't just wash clothes; we preserve the integrity of your most cherished
+                    garments with meticulous care and attention to detail.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-primary">Explore Our Services</a>
+                    <a href="#outlets" class="btn btn-secondary">Find an Outlet</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Services</h2>
+                    <p class="section-subtitle">Premium care for your garments, delivered with precision and excellence.
+                    </p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card" data-service="washing">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M2 3h20v18H2z" />
+                                <path d="M7 3v18" />
+                                <path d="M17 3v18" />
+                                <path d="M2 8h20" />
+                                <path d="M2 13h20" />
+                                <path d="M2 18h20" />
+                            </svg>
+                        </div>
+                        <h3>Washing</h3>
+                        <p>Professional washing with premium detergents and fabric-safe care to keep your garments
+                            fresh, clean, and long-lasting.</p>
+                    </div>
+                    <div class="service-card" data-service="dry-cleaning">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2v20" />
+                                <path d="m4.93 4.93 14.14 14.14" />
+                                <path d="M2 12h20" />
+                                <path d="m19.07 4.93-14.14 14.14" />
+                            </svg>
+                        </div>
+                        <h3>Dry Cleaning</h3>
+                        <p>High-end dry cleaning with expert care—removing tough stains while preserving fabric quality,
+                            color, and elegance for a flawless finish.</p>
+                    </div>
+                    <div class="service-card" data-service="pressing">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 12h18" />
+                                <path d="M3 6h18" />
+                                <path d="M3 18h18" />
+                            </svg>
+                        </div>
+                        <h3>Pressing</h3>
+                        <p>Expert hand-finishing and steam pressing to give your garments that crisp, shop-new look.</p>
+                    </div>
+                    <div class="service-card" data-service="tailoring">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 3h18v18H3z" />
+                                <path d="M9 3v18" />
+                                <path d="M15 3v18" />
+                            </svg>
+                        </div>
+                        <h3>Stain Removal</h3>
+                        <p>We use expert techniques and fabric-safe solutions to remove tough stains while preserving
+                            the color, texture, and quality of your garments
+                        </p>
+                    </div>
+                    <div class="service-card" data-service="bridal">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </div>
+                        <h3>Express Service</h3>
+                        <p>Our express service offers a fast turnaround for your garments, delivering professionally
+                            cleaned and perfectly finished items within a few hours while maintaining our premium
+                            quality standards.</p>
+                    </div>
+                    <div class="service-card" data-service="leather">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                            </svg>
+                        </div>
+                        <h3>Urgent Service</h3>
+                        <p>Our urgent pressing service is designed for last-minute needs, delivering perfectly pressed
+                            garments within a short turnaround time with exceptional attention to detail. Terms and
+                            conditions apply.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- For Business Section -->
+        <section id="business" class="business section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">For Business</h2>
+                    <p class="section-subtitle">Business Partnerships Built on Quality & Trust</p>
+                </div>
+                <div class="business-content">
+                    <div class="business-text">
+                        <h3>Elevate Your Standards</h3>
+                        <p>Laundroplus partners with hotels and hospitality providers to deliver premium laundry
+                            solutions, ensuring exceptional linen quality and a seamless experience for every guest.</p>
+                        <ul class="business-features">
+                            <li><strong>Hospitality:</strong> Expert care for hotel linen, towels, and guest garments,
+                                maintaining the highest standards of cleanliness, freshness, and presentation..</li>
+                            <li><strong>Corporate:</strong> Professional cleaning and pressing for staff uniforms,
+                                ensuring a polished and consistent appearance across your team.</li>
+                            <li><strong>Events:</strong> Priority laundry and pressing services to support
+                                time-sensitive hospitality operations and special events.
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Inquire About Business Solutions</a>
+                    </div>
+                    <div class="business-image">
+                        <img src="room.jpg" alt="Business Solutions" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Client Logos Marquee -->
+                <div class="client-logos-wrapper">
+                    <p class="trusted-by">Trusted by Luxury Brands</p>
+                    <div class="logos-marquee">
+                        <div class="logos-track">
+                            <!-- Original Group -->
+                            <div class="logos-group">
+                                <div class="logo-item">The Ritz-Carlton</div>
+                                <div class="logo-item">St. Regis</div>
+                                <div class="logo-item">Four Seasons</div>
+                                <div class="logo-item">Mandarin Oriental</div>
+                                <div class="logo-item">The Peninsula</div>
+                                <div class="logo-item">Waldorf Astoria</div>
+                            </div>
+                            <!-- Duplicate Group for Seamless Loop -->
+                            <div class="logos-group" aria-hidden="true">
+                                <div class="logo-item">The Ritz-Carlton</div>
+                                <div class="logo-item">St. Regis</div>
+                                <div class="logo-item">Four Seasons</div>
+                                <div class="logo-item">Mandarin Oriental</div>
+                                <div class="logo-item">The Peninsula</div>
+                                <div class="logo-item">Waldorf Astoria</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outlets Section -->
+        <section id="outlets" class="outlets section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Outlets</h2>
+                    <p class="section-subtitle">Visit our luxury boutiques</p>
+                </div>
+                <div class="outlets-wrapper">
+                    <div class="outlets-list">
+                        <div class="outlet-card active" data-location="mayfair">
+                            <h3>Cinnamon Grand</h3>
+                            <p>77 Galle Road, Kollupitiya, Colombo 05</p>
+                            <span class="opening-hours">Mon-Sun: 8am - 6.30pm</span>
+                        </div>
+                        <div class="outlet-card" data-location="chelsea">
+                            <h3>Ward Place</h3>
+                            <p>32 Ward Place, Colombo 07</p>
+                            <span class="opening-hours">Mon-Sat: 9am - 7pm</span>
+                        </div>
+                        <!-- <div class="outlet-card" data-location="knightsbridge">
+                            <h3>Knightsbridge Gallery</h3>
+                            <p>88 Brompton Rd, Knightsbridge, London SW3 1ER</p>
+                            <span class="opening-hours">Mon-Sun: 10am - 6pm</span>
+                        </div>-->
+                    </div>
+                    <div class="map-container">
+                        <!-- Real Google Maps Iframe -->
+                        <iframe id="google-map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.772321722565!2d79.84532957403337!3d6.917800793081797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259004741ec17%3A0x6d810d8b8de10559!2sLaundro%20Plus%20-%20Cinnamon%20Grand!5e0!3m2!1sen!2slk!4v1774576894723!5m2!1sen!2slk"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="reviews section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Client Experiences</h2>
+                    <p class="section-subtitle">What our discerning clients say</p>
+                </div>
+                <div class="reviews-marquee">
+                    <div class="reviews-track">
+                        <!-- Original Reviews -->
+                        <div class="review-card">
+                            <div class="review-stars">★★★★</div>
+                            <p class="review-text">"A very organized placed to do your laundry
+
+                                Try it out , i recommend it due to the service i have been getting !"</p>
+                            <span class="review-author">— Jazz I</span>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"Just collected my clothes from Laundro Plus and I'm very pleased.
+                                Excellent quick service and a quality finish. Highly recommended."</p>
+                            <span class="review-author">— Hasan Cader</span>
+                        </div>
+                        <!-- New Reviews -->
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"They provide extremely professional and fast service. Since I’m
+                                always traveling, I rely on them for my last-minute laundry needs, as they complete
+                                everything within a maximum of 3 hours. The staff is friendly and the service is very
+                                convenient."</p>
+                            <span class="review-author">— Shane Shantol</span>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"Best laundry in town. Great staff/customer service, ample parking,
+                                affordable, premium output (fabric is soft and smells great, well packed), and quick
+                                turnaround."</p>
+                            <span class="review-author">— Sanjay Weerakoon</span>
+                        </div>
+                        <!-- Duplicated for Seamless Loop -->
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"Managed to get a suit dry cleaned within one day. Was the cheapest
+                                of all the places checked."</p>
+                            <span class="review-author">— Gayan De Alwis</span>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"One of the best laundries, professional services, good customer
+                                care, staff is very professional and friendly"</p>
+                            <span class="review-author">— Nithya Darshani</span>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"One of the best laundries, professional services, good customer
+                                care, staff is very professional and friendly"</p>
+                            <span class="review-author">— Nithya Darshani</span>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">“I was truly impressed by the team’s quick response, sincere effort,
+                                and kindness in arranging to send my T-shirt back to Japan. A trustworthy and caring
+                                service—highly recommended."</p>
+                            <span class="review-author">— TOMOYO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2 class="section-title">Get in Touch</h2>
+                        <p>Connect with us or visit our outlet for professional laundry solutions.</p>
+                        <ul class="contact-details">
+                            <li>
+                                <strong>Address:</strong> No, 331 Park Road, Colombo 05.
+                            </li>
+                            <li>
+                                <strong>Hotline:</strong> +94 11 755 5515
+
+                            </li>
+                            <li>
+                                <strong>Email:</strong> info@laundroplus.lk
+                            </li>
+                            <li>
+                                <strong>Hours:</strong> Mon - Sun: 8am - 6.30pm
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="" disabled selected>Service Interest</option>
+                                <option value="wet-cleaning">Wet Cleaning</option>
+                                <option value="dry-cleaning">Dry Cleaning</option>
+                                <option value="finishing">Pressing & Finishing</option>
+                                <option value="tailoring">Tailoring & Repairs</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand">
+                    <img src="logo.png" alt="LaundroPlus Logo" class="footer-logo-img">
+                    <p class="footer-tagline">Standards,<br>Not Just Service .</p>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/people/Laundro-Plus-Laundry/61561890026233/"
+                            aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#business">For Business</a></li>
+                        <li><a href="#outlets">Our Outlets</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col services">
+                    <h4>Our Expertise</h4>
+                    <ul>
+                        <li><a href="#services">Dry Cleaning</a></li>
+                        <li><a href="#services">Washing</a></li>
+                        <li><a href="#services">Pressing</a></li>
+                        <li><a href="#services">Stain Removal</a></li>
+                        <li><a href="#services">Express and Urgent</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact">
+                    <h4>Contact Us</h4>
+                    <p>No 331, Park Road,<br>Colombo 05.</p>
+                    <p><a href="tel:+94117555515">+94 11 755 5515</a></p>
+                    <p><a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a></p>
+                </div>
+
+                <div class="footer-col newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive luxury garment care tips and exclusive offers.</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 LaundroPlus. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </div>
+
+    <!-- Track Order Floating Button -->
+    <div class="track-btn" id="open-track">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+            <line x1="12" y1="22.08" x2="12" y2="12" />
+        </svg>
+        <span>Track Order</span>
+    </div>
+
+    <!-- Track Order Overlay -->
+    <div class="track-overlay" id="track-overlay">
+        <div class="track-modal">
+            <button class="track-close" id="close-track">&times;</button>
+            <h3>Track My Order</h3>
+            <p>Enter your order number to see the current status and bill value.</p>
+            <div class="track-form">
+                <input type="text" id="order-id" placeholder="Order Number (e.g., LP001)">
+                <button class="btn btn-primary" id="track-submit">Track</button>
+            </div>
+            <div id="track-result" class="track-result hidden">
+                <div class="result-details">
+                    <div class="result-item">
+                        <strong>Status:</strong>
+                        <span id="result-status">—</span>
+                    </div>
+                    <div class="result-item">
+                        <strong>Bill Value:</strong>
+                        <span id="result-bill">—</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Floating Button -->
+    <div class="chat-btn" id="open-chat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg>
+    </div>
+
+    <!-- Chatbot Window -->
+    <div class="chat-window" id="chat-window">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <img src="logo.png" alt="LaundroPlus" class="chat-bot-logo">
+                <div>
+                    <h4>LaundroPlus Concierge</h4>
+                    <span>Online | AI Assistant</span>
+                </div>
+            </div>
+            <button class="chat-close" id="close-chat">&times;</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will be injected here -->
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type a message...">
+            <button id="chat-send">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
