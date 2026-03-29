@@ -52,6 +52,47 @@ document.addEventListener('DOMContentLoaded', () => {
         heroDesc.textContent = taglines[randomIndex].desc;
     }
 
+    // Reviews Auto-Scroll
+    const reviewsTrack = document.querySelector('.reviews-track');
+    if (reviewsTrack) {
+        let isHovered = false;
+        
+        // Pause on hover
+        reviewsTrack.addEventListener('mouseenter', () => isHovered = true);
+        reviewsTrack.addEventListener('mouseleave', () => isHovered = false);
+
+        // Keep a reference to the original cards
+        const originalCards = Array.from(reviewsTrack.children);
+        
+        // Duplicate the cards dynamically to create an infinite buffer
+        originalCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            // Hide clones from screen readers and simplify
+            clone.setAttribute('aria-hidden', 'true');
+            reviewsTrack.appendChild(clone);
+        });
+
+        setInterval(() => {
+            if (!isHovered) {
+                const cardWidth = 480; // card block (450px) + gap (30px)
+                const totalOriginalWidth = originalCards.length * cardWidth;
+                
+                // If we've reached the duplicated cards portion, quickly snap back
+                // to the same visual position in the original portion without animation!
+                if (reviewsTrack.scrollLeft >= totalOriginalWidth) {
+                    reviewsTrack.style.scrollBehavior = 'auto';
+                    reviewsTrack.scrollLeft = reviewsTrack.scrollLeft - totalOriginalWidth;
+                }
+
+                // Wait a tiny bit (50ms) to ensure the snap-back happened, then smoothly scroll forward
+                setTimeout(() => {
+                    reviewsTrack.style.scrollBehavior = 'smooth';
+                    reviewsTrack.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                }, 50);
+            }
+        }, 5000);
+    }
+
     // Mobile Menu Logic
     const menuToggle = document.getElementById('mobile-menu');
     const navList = document.querySelector('.nav-list');
@@ -79,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Google Maps URLs
     const locations = {
         mayfair: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.772321722565!2d79.84532957403337!3d6.917800793081797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259004741ec17%3A0x6d810d8b8de10559!2sLaundro%20Plus%20-%20Cinnamon%20Grand!5e0!3m2!1sen!2slk!4v1774523213361!5m2!1sen!2slk",
-        chelsea: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7838648073925!2d79.86576137403341!3d6.91642439308316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259932640755b%3A0xc12021bb683bec3f!2sLaundro%20Plus%20Laundry%20-%20Ward%20Place!5e0!3m2!1sen!2slk!4v1774576510148!5m2!1sen!2slk"
-        //knightsbridge: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.99!2d-0.16!3d51.50!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760538a58f0001%3A0x8d5c64bf27b93a!2sKnightsbridge%2C%20London!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk"
+        chelsea: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7838648073925!2d79.86576137403341!3d6.91642439308316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259932640755b%3A0xc12021bb683bec3f!2sLaundro%20Plus%20Laundry%20-%20Ward%20Place!5e0!3m2!1sen!2slk!4v1774576510148!5m2!1sen!2slk",
+        knightsbridge: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15843.39653155344!2d79.84087804465487!3d6.908636678902402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259002f5e1d2b%3A0x5e545dec40f14ec8!2sLaundro%20Plus%20at%20Tri-Zen!5e0!3m2!1sen!2slk!4v1774758677903!5m2!1sen!2slk"
     };
 
     outletCards.forEach(card => {
@@ -266,21 +307,25 @@ document.addEventListener('DOMContentLoaded', () => {
         'price': 'Our pricing reflects our premium care. For example, shirts start at £8, and suits at £35. Would you like a full price list emailed to you?',
         'status': 'You can track your order using the "Track Order" button on the bottom right of the screen! Just enter your order ID.',
         'hours': 'Our boutiques are open Mon-Sat from 8am to 8pm. Our Knightsbridge Gallery is also open on Sundays from 10am to 6pm.',
-        'contact': 'You can reach our concierge at +44 20 7123 4567 or email us at concierge@laundroplus.com.',
+        'contact': 'You can reach our concierge at <a href="tel:+94117555515">+94 11 755 5515</a> or email us at <a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a>.',
         'default': 'That is a great question. Would you like me to connect you with one of our human concierge specialists, or can I help with something else like services or pricing?'
     };
 
     const addMessage = (text, sender) => {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('message', sender);
-        messageDiv.textContent = text;
+        if (sender === 'bot') {
+            messageDiv.innerHTML = text;
+        } else {
+            messageDiv.textContent = text;
+        }
         chatMessages.appendChild(messageDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     };
 
     const getBotResponse = (input) => {
         const msg = input.toLowerCase();
-        if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) return botResponses.greeting;
+        if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey') || msg.includes()) return botResponses.greeting;
         if (msg.includes('service') || msg.includes('wash') || msg.includes('clean')) return botResponses.services;
         if (msg.includes('price') || msg.includes('cost') || msg.includes('how much')) return botResponses.price;
         if (msg.includes('status') || msg.includes('track') || msg.includes('order')) return botResponses.status;

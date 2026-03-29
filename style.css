@@ -806,22 +806,18 @@ img {
 .reviews-track {
     display: flex;
     gap: 30px;
-    width: max-content;
-    animation: scroll 40s linear infinite;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    /* Firefox */
+    padding-bottom: 20px;
 }
 
-.reviews-marquee:hover .reviews-track {
-    animation-play-state: paused;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-50% - 15px));
-    }
+.reviews-track::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
 }
 
 .review-card {
@@ -830,10 +826,10 @@ img {
     border-radius: 8px;
     text-align: center;
     width: 450px;
-    /* Fixed width for consistent marquee */
     flex-shrink: 0;
     transition: var(--transition);
     cursor: default;
+    scroll-snap-align: center;
 }
 
 .review-card:hover {
@@ -976,9 +972,9 @@ img {
 }
 
 .footer-logo-img {
-    height: 100px;
-    margin-bottom: 5px;
-    margin-left: -20px;
+    height: 150px;
+    margin-bottom: -5px;
+    margin-left: -10px;
 }
 
 .footer-tagline {

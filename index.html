@@ -210,11 +210,11 @@
                 </div>
 
                 <!-- Client Logos Marquee -->
-                <div class="client-logos-wrapper">
+                <!-- <div class="client-logos-wrapper">
                     <p class="trusted-by">Trusted by Luxury Brands</p>
                     <div class="logos-marquee">
                         <div class="logos-track">
-                            <!-- Original Group -->
+                            
                             <div class="logos-group">
                                 <div class="logo-item">The Ritz-Carlton</div>
                                 <div class="logo-item">St. Regis</div>
@@ -223,7 +223,7 @@
                                 <div class="logo-item">The Peninsula</div>
                                 <div class="logo-item">Waldorf Astoria</div>
                             </div>
-                            <!-- Duplicate Group for Seamless Loop -->
+                           
                             <div class="logos-group" aria-hidden="true">
                                 <div class="logo-item">The Ritz-Carlton</div>
                                 <div class="logo-item">St. Regis</div>
@@ -234,7 +234,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+
             </div>
         </section>
 
@@ -250,18 +252,21 @@
                         <div class="outlet-card active" data-location="mayfair">
                             <h3>Cinnamon Grand</h3>
                             <p>77 Galle Road, Kollupitiya, Colombo 05</p>
+                            <p>Hotline:<a href="tel:+94117555517"> +94 11 755 5517</p></a>
                             <span class="opening-hours">Mon-Sun: 8am - 6.30pm</span>
                         </div>
                         <div class="outlet-card" data-location="chelsea">
                             <h3>Ward Place</h3>
                             <p>32 Ward Place, Colombo 07</p>
+                            <p>Hotline:<a href="tel:+94117555518"> +94 11 755 5518</p></a>
                             <span class="opening-hours">Mon-Sat: 9am - 7pm</span>
                         </div>
-                        <!-- <div class="outlet-card" data-location="knightsbridge">
-                            <h3>Knightsbridge Gallery</h3>
-                            <p>88 Brompton Rd, Knightsbridge, London SW3 1ER</p>
-                            <span class="opening-hours">Mon-Sun: 10am - 6pm</span>
-                        </div>-->
+                        <div class="outlet-card" data-location="knightsbridge">
+                            <h3>Trizen</h3>
+                            <p>Tower 1, M floor.</p>
+                            <p><i>Only for Trizen Apartment Residents</i></p>
+                            <span class="opening-hours">Mon-Sun: 8am - 6.30pm</span>
+                        </div>
                     </div>
                     <div class="map-container">
                         <!-- Real Google Maps Iframe -->
@@ -357,31 +362,30 @@
                                 <strong>Address:</strong> No, 331 Park Road, Colombo 05.
                             </li>
                             <li>
-                                <strong>Hotline:</strong> +94 11 755 5515
-
+                                <strong>Hotline:</strong> <a href="tel:+94117555515">+94 11 755 5515</a>
                             </li>
                             <li>
-                                <strong>Email:</strong> info@laundroplus.lk
+                                <strong>Email:</strong> <a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a>
                             </li>
                             <li>
                                 <strong>Hours:</strong> Mon - Sun: 8am - 6.30pm
                             </li>
                         </ul>
                     </div>
-                    <form class="contact-form">
+                    <form class="contact-form" action="contact.php" method="POST">
                         <div class="form-group">
-                            <input type="text" placeholder="Full Name" required>
+                            <input type="text" name="name" placeholder="Full Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email Address" required>
+                            <input type="email" name="email" placeholder="Email Address" required>
                         </div>
                         <div class="form-group">
-                            <select required>
+                            <select name="service" required>
                                 <option value="" disabled selected>Service Interest</option>
-                                <option value="wet-cleaning">Wet Cleaning</option>
+                                <option value="washing">Washing</option>
                                 <option value="dry-cleaning">Dry Cleaning</option>
-                                <option value="finishing">Pressing & Finishing</option>
-                                <option value="tailoring">Tailoring & Repairs</option>
+                                <option value="Pressing">Pressing</option>
+                                <option value="For Business">For Business</option>
                             </select>
                         </div>
                         <div class="form-group">
