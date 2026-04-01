@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroContentParallax = document.querySelector('.hero-content');
     const heroOverlayParallax = document.querySelector('.hero-overlay');
     const businessImage = document.querySelector('.business-image img');
-    const revealElements = document.querySelectorAll('.service-card, .offer-card, .review-card, .section-header');
+    const revealElements = document.querySelectorAll('.service-card, .review-card, .section-header');
     const backToTop = document.getElementById('back-to-top');
     
     // Initial styles for reveal
@@ -431,35 +431,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Promotional Pop-up Logic
-    const promoOverlay = document.getElementById('promo-overlay');
-    const closePromo = document.getElementById('close-promo');
-    const promoAction = document.getElementById('promo-action');
-
-    if (promoOverlay && closePromo) {
-        // Show pop-up after 3 seconds of page load (only once per session)
-        if (!sessionStorage.getItem('promoShown')) {
-            setTimeout(() => {
-                promoOverlay.classList.add('active');
-                sessionStorage.setItem('promoShown', 'true');
-            }, 3000);
-        }
-
-        const hidePromo = () => {
-            promoOverlay.classList.remove('active');
-        };
-
-        closePromo.addEventListener('click', hidePromo);
-        
-        if (promoAction) {
-            promoAction.addEventListener('click', hidePromo);
-        }
-
-        // Close when clicking outside the modal
-        promoOverlay.addEventListener('click', (e) => {
-            if (e.target === promoOverlay) {
-                hidePromo();
-            }
-        });
-    }
 });
