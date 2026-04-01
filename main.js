@@ -1,15 +1,109 @@
 // Simple script for form submission and scroll effects
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Header background change on scroll
+    // Shared elements for scroll
     const header = document.querySelector('.header');
+    const heroSlidesParallax = document.querySelector('.hero-slides');
+    const heroContentParallax = document.querySelector('.hero-content');
+    const heroOverlayParallax = document.querySelector('.hero-overlay');
+    const businessImage = document.querySelector('.business-image img');
+    const revealElements = document.querySelectorAll('.service-card, .review-card, .section-header');
+    const backToTop = document.getElementById('back-to-top');
+    
+    // Initial styles for reveal
+    revealElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.8s ease-out';
+    });
+
+    // 4. Reveal on Scroll (Using Intersection Observer for Performance)
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+        // Fallback for older browsers
+        revealElements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+    }
+
+    // Centralized performant scroll listener to handle Parallax
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                // --- 1. BATCHED READS (Measure First) ---
+                const scrollY = window.scrollY;
+                const windowHeight = window.innerHeight;
+                let businessRectTop = null;
+                let businessRectBottom = null;
+
+                if (businessImage) {
+                    const rect = businessImage.getBoundingClientRect();
+                    businessRectTop = rect.top;
+                    businessRectBottom = rect.bottom;
+                }
+
+                // --- 2. BATCHED WRITES (Mutate DOM Later) ---
+                
+                // Header background change
+                if (header) {
+                    if (scrollY > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+                
+                // Hero Parallax Effect
+                if (heroSlidesParallax && heroContentParallax && scrollY <= windowHeight) {
+                    heroSlidesParallax.style.transform = `translateY(${scrollY * 0.4}px)`;
+                    if(heroOverlayParallax) heroOverlayParallax.style.transform = `translateY(${scrollY * 0.4}px)`;
+                    heroContentParallax.style.transform = `translateY(${scrollY * 0.2}px)`;
+                    heroContentParallax.style.opacity = Math.max(0, 1 - (scrollY / (windowHeight * 0.7)));
+                }
+                
+                // Business Image Parallax
+                if (businessImage && businessRectTop !== null) {
+                    if (businessRectTop < windowHeight && businessRectBottom > 0) {
+                        const moveY = (windowHeight - businessRectTop) * 0.08;
+                        businessImage.style.transform = `translateY(-${moveY}px)`;
+                    }
+                }
+                
+                // Back to Top Button visibility
+                if (backToTop) {
+                    if (scrollY > 500) {
+                        backToTop.classList.add('active');
+                    } else {
+                        backToTop.classList.remove('active');
+                    }
+                }
+                
+                ticking = false;
+            });
+            ticking = true;
         }
     });
+
+    // Trigger scroll event once on load to initialize elements
+    window.dispatchEvent(new Event('scroll'));
 
     // Hero Slideshow Logic
     const slides = document.querySelectorAll('.hero-slide');
@@ -56,14 +150,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewsTrack = document.querySelector('.reviews-track');
     if (reviewsTrack) {
         let isHovered = false;
-        
+
         // Pause on hover
         reviewsTrack.addEventListener('mouseenter', () => isHovered = true);
         reviewsTrack.addEventListener('mouseleave', () => isHovered = false);
 
         // Keep a reference to the original cards
         const originalCards = Array.from(reviewsTrack.children);
-        
+
         // Duplicate the cards dynamically to create an infinite buffer
         originalCards.forEach(card => {
             const clone = card.cloneNode(true);
@@ -76,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isHovered) {
                 const cardWidth = 480; // card block (450px) + gap (30px)
                 const totalOriginalWidth = originalCards.length * cardWidth;
-                
+
                 // If we've reached the duplicated cards portion, quickly snap back
                 // to the same visual position in the original portion without animation!
                 if (reviewsTrack.scrollLeft >= totalOriginalWidth) {
@@ -223,43 +317,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animation on scroll (Simple Reveal)
-    const revealElements = document.querySelectorAll('.service-card, .review-card, .section-header');
-
-    const revealOnScroll = () => {
-        const triggerBottom = window.innerHeight * 0.8;
-
-        revealElements.forEach(el => {
-            const elTop = el.getBoundingClientRect().top;
-
-            if (elTop < triggerBottom) {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            }
-        });
-    };
-
-    // Initial styles for reveal
-    revealElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.8s ease-out';
-    });
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Trigger once on load
-
     // Back to Top Logic
-    const backToTop = document.getElementById('back-to-top');
     if (backToTop) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
-        });
-
         backToTop.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -325,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getBotResponse = (input) => {
         const msg = input.toLowerCase();
-        if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey') || msg.includes()) return botResponses.greeting;
+        if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey') || msg.includes('kohomada') || msg.includes('hola')) return botResponses.greeting;
         if (msg.includes('service') || msg.includes('wash') || msg.includes('clean')) return botResponses.services;
         if (msg.includes('price') || msg.includes('cost') || msg.includes('how much')) return botResponses.price;
         if (msg.includes('status') || msg.includes('track') || msg.includes('order')) return botResponses.status;
