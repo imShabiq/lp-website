@@ -87,6 +87,7 @@
             </div>
             <ul class="nav-list">
                 <li><a href="#services">Services</a></li>
+                <li><a href="#offers">Offers</a></li>
                 <li><a href="#business">For Business</a></li>
                 <li><a href="#outlets">Outlets</a></li>
                 <li><a href="#reviews">Reviews</a></li>
@@ -232,6 +233,40 @@
                             conditions apply.</p>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- Offers Section -->
+        <section id="offers" class="offers section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Special News & Offers</h2>
+                    <p class="section-subtitle">Discover exclusive deals and the latest updates from LaundroPlus.</p>
+                </div>
+                <div class="offers-grid">
+                    <div class="offer-card">
+                        <div class="offer-badge">15% OFF</div>
+                        <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&q=80&w=600"
+                            alt="Special Weekend Offer" class="offer-img">
+                        <div class="offer-content">
+                            <h3>Weekend Special</h3>
+                            <p>Get 15% off on all Dry Cleaning services this weekend. Use the promo code
+                                <strong>LUX15</strong> when dropping off your items.</p>
+                            <a href="#contact" class="btn btn-primary">Claim Offer</a>
+                        </div>
+                    </div>
+                    <div class="offer-card">
+                        <div class="offer-badge">NEW FEATURE</div>
+                        <img src="suits.jpg" alt="New App Feature" class="offer-img">
+                        <div class="offer-content">
+                            <h3>Live Order Tracking</h3>
+                            <p>You can now track your laundry order in real-time right from our website! Simply enter
+                                your order ID in the tracking window.</p>
+                            <a href="#open-track" class="btn btn-secondary"
+                                onclick="document.getElementById('open-track').click(); return false;">Try It Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -625,6 +660,28 @@
                     <polygon points="22 2 15 22 11 13 2 9 22 2" />
                 </svg>
             </button>
+        </div>
+    </div>
+
+    <!-- Promotional Pop-up -->
+    <div class="promo-overlay" id="promo-overlay">
+        <div class="promo-modal">
+            <button class="promo-close" id="close-promo">&times;</button>
+            <div class="promo-content-wrapper">
+                <div class="promo-image">
+                    <img src="pick up and delivery.png" alt="Special Offer">
+                </div>
+                <div class="promo-text">
+                    <h2>Wait! Don't Miss Out</h2>
+                    <p>Get <strong>15% OFF</strong> on all Dry Cleaning services this weekend. Treat your luxury wear to
+                        the best care in Colombo.</p>
+                    <div class="promo-code-box">
+                        <span>Use Code:</span>
+                        <strong>LUX15</strong>
+                    </div>
+                    <a href="#offers" class="btn btn-primary btn-full" id="promo-action">View Offers</a>
+                </div>
+            </div>
         </div>
     </div>
 
