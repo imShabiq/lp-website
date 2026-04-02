@@ -43,24 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Centralized performant scroll listener to handle Parallax
+    // Centralized scroll listener for header and back-to-top (Lightweight)
     let ticking = false;
     window.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
-                // --- 1. BATCHED READS (Measure First) ---
                 const scrollY = window.scrollY;
-                const windowHeight = window.innerHeight;
-                let businessRectTop = null;
-                let businessRectBottom = null;
-
-                if (businessImage) {
-                    const rect = businessImage.getBoundingClientRect();
-                    businessRectTop = rect.top;
-                    businessRectBottom = rect.bottom;
-                }
-
-                // --- 2. BATCHED WRITES (Mutate DOM Later) ---
                 
                 // Header background change
                 if (header) {
@@ -68,22 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         header.classList.add('scrolled');
                     } else {
                         header.classList.remove('scrolled');
-                    }
-                }
-                
-                // Hero Parallax Effect
-                if (heroSlidesParallax && heroContentParallax && scrollY <= windowHeight) {
-                    heroSlidesParallax.style.transform = `translateY(${scrollY * 0.4}px)`;
-                    if(heroOverlayParallax) heroOverlayParallax.style.transform = `translateY(${scrollY * 0.4}px)`;
-                    heroContentParallax.style.transform = `translateY(${scrollY * 0.2}px)`;
-                    heroContentParallax.style.opacity = Math.max(0, 1 - (scrollY / (windowHeight * 0.7)));
-                }
-                
-                // Business Image Parallax
-                if (businessImage && businessRectTop !== null) {
-                    if (businessRectTop < windowHeight && businessRectBottom > 0) {
-                        const moveY = (windowHeight - businessRectTop) * 0.08;
-                        businessImage.style.transform = `translateY(-${moveY}px)`;
                     }
                 }
                 
