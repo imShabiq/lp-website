@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Track Order Logic
+    // Track Order Logic (Connected to Supabase)
     const openTrack = document.getElementById('open-track');
     const closeTrack = document.getElementById('close-track');
     const trackOverlay = document.getElementById('track-overlay');
@@ -213,12 +213,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultStatus = document.getElementById('result-status');
     const resultBill = document.getElementById('result-bill');
 
-    // Mock Data
-    const mockOrders = {
-        'LP001': { status: 'Cleaning', bill: '£120.50' },
-        'LP002': { status: 'Pressed & Ready', bill: '£85.00' },
-        'LP003': { status: 'Out for Delivery', bill: '£45.00' }
-    };
+    // Supabase Credentials (USER: Replace with your own keys)
+    const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+    
+    let supabaseClient = null;
+    if (typeof supabase !== 'undefined') {
+        supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }
 
     openTrack.addEventListener('click', () => trackOverlay.classList.add('active'));
     closeTrack.addEventListener('click', () => {
@@ -227,15 +229,41 @@ document.addEventListener('DOMContentLoaded', () => {
         orderInput.value = '';
     });
 
-    trackSubmit.addEventListener('click', () => {
+    trackSubmit.addEventListener('click', async () => {
         const id = orderInput.value.trim().toUpperCase();
-        if (mockOrders[id]) {
-            resultStatus.textContent = mockOrders[id].status;
-            resultBill.textContent = mockOrders[id].bill;
-            trackResult.classList.remove('hidden');
-        } else {
-            alert('Order not found. Please try LP001, LP002, or LP003.');
-            trackResult.classList.add('hidden');
+        if (!id) return;
+
+        if (!supabaseClient) {
+            alert('Database connection not initialized. Please check your Supabase keys.');
+            return;
+        }
+
+        // Luxury Loading State
+        const originalText = trackSubmit.textContent;
+        trackSubmit.disabled = true;
+        trackSubmit.textContent = 'Seeking...';
+        trackResult.classList.add('hidden');
+
+        try {
+            const { data, error } = await supabaseClient
+                .from('orders')
+                .select('*')
+                .eq('order_id', id)
+                .single();
+
+            if (error || !data) {
+                alert('Order not found. Please verify your order ID.');
+            } else {
+                resultStatus.textContent = data.status;
+                resultBill.textContent = data.bill_value || data.bill || 'N/A';
+                trackResult.classList.remove('hidden');
+            }
+        } catch (err) {
+            console.error('Tracking Error:', err);
+            alert('A connection error occurred. Please try again later.');
+        } finally {
+            trackSubmit.disabled = false;
+            trackSubmit.textContent = originalText;
         }
     });
 

@@ -218,6 +218,9 @@ img {
 }
 
 .header-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     color: var(--white);
     font-weight: 600;
     letter-spacing: 1px;
@@ -226,6 +229,25 @@ img {
 
 .header.scrolled .header-contact {
     color: var(--primary-color);
+}
+
+.header-contact .divider {
+    opacity: 0.3;
+}
+
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.whatsapp-link:hover {
+    color: var(--accent-color);
+}
+
+.whatsapp-link svg {
+    margin-bottom: -2px;
 }
 
 /* Buttons */
@@ -450,6 +472,12 @@ img {
 /* For Business */
 .business {
     background-color: var(--primary-color);
+    background-image:
+        /*linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)),*/
+        url('bg2.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
     color: var(--white);
 }
 
