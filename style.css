@@ -392,8 +392,9 @@ img {
     padding: 50px 40px;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.6s ease, border-color 0.4s ease;
     border-bottom: 3px solid transparent;
+    will-change: transform;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -442,9 +443,9 @@ img {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px) scale(1.02);
     border-bottom-color: var(--accent-color);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
 }
 
 .service-icon {
@@ -689,6 +690,7 @@ img {
 
 /* Track Order UI */
 .track-btn {
+    display: none;
     position: fixed;
     right: 30px;
     bottom: 30px;
@@ -718,6 +720,7 @@ img {
 }
 
 .track-overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -862,37 +865,17 @@ img {
     text-align: center;
     width: 450px;
     flex-shrink: 0;
-    transition: var(--transition);
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.6s ease;
     cursor: default;
     scroll-snap-align: center;
+    will-change: transform;
 }
 
 .review-card:hover {
-    animation: shake 0.5s ease-in-out infinite;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
 }
 
-@keyframes shake {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(1deg);
-    }
-
-    50% {
-        transform: rotate(0deg);
-    }
-
-    75% {
-        transform: rotate(-1deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
 
 .review-stars {
     color: var(--accent-color);
@@ -1138,8 +1121,8 @@ img {
 .back-to-top {
     position: fixed;
     bottom: 30px;
-    left: 30px;
-    /* Moved to the left side to avoid conflict with track button */
+    right: 30px;
+    /* Positioned on the right for standard UX */
     width: 45px;
     height: 45px;
     background-color: var(--white);
@@ -1292,15 +1275,6 @@ img {
         padding: 30px;
     }
 
-    .track-btn {
-        right: 20px;
-        bottom: 20px;
-        padding: 12px 20px;
-    }
-
-    .track-btn span {
-        display: none;
-    }
 
     .footer-grid {
         grid-template-columns: 1fr;
@@ -1349,10 +1323,6 @@ img {
         left: auto;
     }
 
-    .track-btn {
-        right: 20px;
-        bottom: 25px;
-    }
 }
 
 /* WhatsApp Brand Styles */

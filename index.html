@@ -64,9 +64,11 @@
     }
     </script>
 
-    <!-- Google Fonts -->
+    <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
@@ -110,23 +112,22 @@
         <section class="hero">
             <div class="hero-slides">
                 <div class="hero-slide active"
-                    style="background-image: url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&q=80&w=2071');">
+                    style="background-image: url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&q=80&w=2071');"
+                    fetchpriority="high">
                 </div>
                 <div class="hero-slide"
                     style="background-image: url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&q=80&w=2070');">
                 </div>
                 <div class="hero-slide" style="background-image: url('banner\ one.png');">
                 </div>
-            </div>
-            <div class="hero-slide" style="background-image: url('banner\ two.png');">
-            </div>
-            </div>
-            <div class="hero-slide" style="background-image: url('banner\ three.png');">
-            </div>
-            <div class="hero-slide" style="background-image: url('banner\ four.png');">
-            </div>
-            <div class="hero-slide" style="background-image: url('banner\ five.png');">
-            </div>
+                <div class="hero-slide" style="background-image: url('banner\ two.png');">
+                </div>
+                <div class="hero-slide" style="background-image: url('banner\ three.png');">
+                </div>
+                <div class="hero-slide" style="background-image: url('banner\ four.png');">
+                </div>
+                <div class="hero-slide" style="background-image: url('banner\ five.png');">
+                </div>
             </div>
             <div class="hero-overlay"></div>
             <div class="container hero-content">
@@ -268,7 +269,7 @@
                     </div>
                     <div class="business-image">
                         <img src="room.jpg" alt="Hotel room linen cleaned by LaundroPlus business laundry solutions"
-                            class="img-fluid">
+                            class="img-fluid" loading="lazy">
                     </div>
                 </div>
 
@@ -485,7 +486,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col brand">
-                    <img src="logo.png" alt="LaundroPlus - Premium Laundry Service Logo" class="footer-logo-img">
+                    <img src="logo.png" alt="LaundroPlus - Premium Laundry Service Logo" class="footer-logo-img" loading="lazy">
                     <p class="footer-tagline">Standards,<br>Not Just Service .</p>
                     <div class="social-links">
                         <a href="https://web.facebook.com/people/Laundro-Plus-Laundry/61561890026233/"
@@ -588,7 +589,7 @@
         </svg>
     </div>
 
-    <!-- Track Order Floating Button -->
+    <!-- Track Order Floating Button (HIDDEN)
     <div class="track-btn" id="open-track">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -598,9 +599,9 @@
             <line x1="12" y1="22.08" x2="12" y2="12" />
         </svg>
         <span>Track Order</span>
-    </div>
+    </div> -->
 
-    <!-- Track Order Overlay -->
+    <!-- Track Order Overlay (HIDDEN)
     <div class="track-overlay" id="track-overlay">
         <div class="track-modal">
             <button class="track-close" id="close-track">&times;</button>
@@ -623,7 +624,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/94742555515" class="wa-floating-btn" target="_blank" aria-label="Chat on WhatsApp">
