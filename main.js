@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const businessImage = document.querySelector('.business-image img');
     const revealElements = document.querySelectorAll('.service-card, .review-card, .section-header');
     const backToTop = document.getElementById('back-to-top');
-    
+
     // Initial styles for reveal
     revealElements.forEach(el => {
         el.style.opacity = '0';
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 const scrollY = window.scrollY;
-                
+
                 // Header background change
                 if (header) {
                     if (scrollY > 100) {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         header.classList.remove('scrolled');
                     }
                 }
-                
+
                 // Back to Top Button visibility
                 if (backToTop) {
                     if (scrollY > 500) {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         backToTop.classList.remove('active');
                     }
                 }
-                
+
                 ticking = false;
             });
             ticking = true;
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Supabase Credentials (USER: Replace with your own keys)
     const SUPABASE_URL = 'YOUR_SUPABASE_URL';
     const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
-    
+
     let supabaseClient = null;
     if (typeof supabase !== 'undefined') {
         supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
