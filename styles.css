@@ -462,7 +462,7 @@ em { font-style: italic; }
   .hero__slides { position: relative; height: min(50svh, 420px); overflow: hidden; }
   .hero__slides::after { content: ""; position: absolute; inset: auto 0 0 0; height: 22%; background: linear-gradient(0deg, #0b0d12, transparent); }
   .hero__slides img { object-position: center 40%; }
-  .hero__slide--lion img { object-position: center 88%; }
+  .hero__slide--lion img { object-position: 52% center; } /* wide lion photo on phones; use 'center 88%' if the lion portrait is switched back on */
   .hero__slide--ring img { object-position: center 70%; }
   .hero__slide--cufflink img { object-position: center 62%; }
   .hero__content { padding-top: 8px; padding-bottom: 56px; }
