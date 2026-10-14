@@ -35,7 +35,7 @@
     <div class="chat__log" role="log" aria-live="polite"></div>
     <form class="chat__form">
       <label class="sr-only" for="chat-input">Your message</label>
-      <textarea id="chat-input" rows="1" maxlength="1000" placeholder="Ask about services, outlets or hours"></textarea>
+      <textarea id="chat-input" rows="1" maxlength="1000" placeholder="Type your question"></textarea>
       <button class="chat__send" type="submit" aria-label="Send message">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>

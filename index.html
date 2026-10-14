@@ -73,6 +73,10 @@
     <a class="btn btn--wa nav__wa" href="https://wa.me/94742555515" target="_blank" rel="noopener">
       <svg width="18" height="18"><use href="#ic-wa"/></svg> WhatsApp
     </a>
+    <a class="nav__call" href="tel:+94117555515" aria-label="Call LaundroPlus on +94 11 755 5515">
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
+      <span>Call</span>
+    </a>
     <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
   </div>
 </header>
@@ -113,47 +117,47 @@
     </aside>
   </section>
 
-  <!-- PROCESS: a real sequence, hung on a garment rail -->
+  <!-- PROCESS: a real sequence, shown as a timeline -->
   <section class="rail" aria-labelledby="rail-title">
     <div class="wrap">
       <header class="rail__head">
-        <p class="eyebrow">Our process</p>
+        <p class="eyebrow eyebrow--dark">Our process</p>
         <h2 id="rail-title">Nothing goes in the machine <em>until we’ve looked at it.</em></h2>
         <p class="rail__lede">Every piece follows the same four steps, from an office shirt to a silk saree.</p>
       </header>
       <ol class="rail__list">
-        <li class="hang"><div class="hang__body">
-          <svg class="hang__hook" viewBox="0 0 120 64" aria-hidden="true"><path d="M52 12a8 8 0 1 1 8 8v10"/><path d="M60 30L8 62h104z"/></svg>
-          <div class="hang__card">
-            <div class="hang__top"><span class="hang__step">Step 1</span><svg class="hang__ic" aria-hidden="true"><use href="#ic-inspect"/></svg></div>
+        <li class="step">
+          <span class="step__node" aria-hidden="true"><svg class="step__ic"><use href="#ic-inspect"/></svg></span>
+          <div class="step__body">
+            <p class="step__num">Step 1</p>
             <h3>Inspect</h3>
             <p>Each piece is checked by hand: care label, fabric, stains, loose buttons and small tears. Anything unusual is noted before cleaning starts.</p>
           </div>
-        </div></li>
-        <li class="hang"><div class="hang__body">
-          <svg class="hang__hook" viewBox="0 0 120 64" aria-hidden="true"><path d="M52 12a8 8 0 1 1 8 8v10"/><path d="M60 30L8 62h104z"/></svg>
-          <div class="hang__card">
-            <div class="hang__top"><span class="hang__step">Step 2</span><svg class="hang__ic" aria-hidden="true"><use href="#ic-dry"/></svg></div>
+        </li>
+        <li class="step">
+          <span class="step__node" aria-hidden="true"><svg class="step__ic"><use href="#ic-dry"/></svg></span>
+          <div class="step__body">
+            <p class="step__num">Step 2</p>
             <h3>Clean</h3>
             <p>Washed or dry cleaned with a method and products chosen for that fabric, never a one-size-fits-all cycle.</p>
           </div>
-        </div></li>
-        <li class="hang"><div class="hang__body">
-          <svg class="hang__hook" viewBox="0 0 120 64" aria-hidden="true"><path d="M52 12a8 8 0 1 1 8 8v10"/><path d="M60 30L8 62h104z"/></svg>
-          <div class="hang__card">
-            <div class="hang__top"><span class="hang__step">Step 3</span><svg class="hang__ic" aria-hidden="true"><use href="#ic-iron"/></svg></div>
+        </li>
+        <li class="step">
+          <span class="step__node" aria-hidden="true"><svg class="step__ic"><use href="#ic-iron"/></svg></span>
+          <div class="step__body">
+            <p class="step__num">Step 3</p>
             <h3>Finish</h3>
             <p>Steam pressed and finished by hand for sharp collars and clean creases, without shine or scorch marks.</p>
           </div>
-        </div></li>
-        <li class="hang"><div class="hang__body">
-          <svg class="hang__hook" viewBox="0 0 120 64" aria-hidden="true"><path d="M52 12a8 8 0 1 1 8 8v10"/><path d="M60 30L8 62h104z"/></svg>
-          <div class="hang__card">
-            <div class="hang__top"><span class="hang__step">Step 4</span><svg class="hang__ic" aria-hidden="true"><use href="#ic-hanger"/></svg></div>
+        </li>
+        <li class="step">
+          <span class="step__node" aria-hidden="true"><svg class="step__ic"><use href="#ic-hanger"/></svg></span>
+          <div class="step__body">
+            <p class="step__num">Step 4</p>
             <h3>Return</h3>
             <p>Ready on a hanger or neatly folded, whichever you prefer. Need it fast? Express gets it back within hours.</p>
           </div>
-        </div></li>
+        </li>
       </ol>
     </div>
   </section>

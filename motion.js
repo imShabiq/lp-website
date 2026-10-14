@@ -5,7 +5,7 @@
   if (!root.classList.contains('motion')) return;
 
   // Care symbols draw in once when they come into view
-  const icons = document.querySelectorAll('.svc__ic, .hang__ic');
+  const icons = document.querySelectorAll('.svc__ic, .step__ic');
   const drawIo = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
       if (en.isIntersecting) { en.target.classList.add('is-drawn'); drawIo.unobserve(en.target); }
