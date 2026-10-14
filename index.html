@@ -1,653 +1,380 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaundroPlus - Premium Laundry & Dry Cleaning Services in Colombo</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <meta name="description"
-        content="LaundroPlus offers premium laundry and dry cleaning services in Colombo, Sri Lanka, with a focus on luxury care and meticulous attention to detail.">
-    <meta name="keywords"
-        content="premium laundry Colombo, dry cleaning Sri Lanka, luxury garment care, professional pressing, bridal dress cleaning, express laundry">
-    <link rel="canonical" href="https://www.laundroplus.lk/">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.laundroplus.lk/">
-    <meta property="og:title" content="LaundroPlus - Premium Laundry in Colombo">
-    <meta property="og:description"
-        content="Experience luxury garment care with LaundroPlus. We offer premium laundry, dry cleaning, pressing, and stain removal services in Colombo, Sri Lanka.">
-    <meta property="og:image" content="https://www.laundroplus.lk/banner%20one.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.laundroplus.lk/">
-    <meta property="twitter:title" content="LaundroPlus - Premium Laundry in Colombo">
-    <meta property="twitter:description"
-        content="Experience luxury garment care with LaundroPlus. We offer premium laundry, dry cleaning, pressing, and stain removal services in Colombo, Sri Lanka.">
-    <meta property="twitter:image" content="https://www.laundroplus.lk/banner%20one.png">
-
-    <!-- Schema Markup (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "DryCleaningOrLaundry",
-      "name": "LaundroPlus",
-      "image": "https://www.laundroplus.lk/logo.png",
-      "@id": "https://www.laundroplus.lk/",
-      "url": "https://www.laundroplus.lk/",
-      "telephone": "+94117555515",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "No 331, Park Road",
-        "addressLocality": "Colombo",
-        "postalCode": "00500",
-        "addressCountry": "LK"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 6.885835,
-        "longitude": 79.866878
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-        ],
-        "opens": "08:00",
-        "closes": "18:30"
-      },
-      "sameAs": [
-        "https://web.facebook.com/people/Laundro-Plus-Laundry/61561890026233/"
-      ]
-    }
-    </script>
-
-    <!-- Performance Optimizations -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LaundroPlus | Premium Laundry &amp; Dry Cleaning in Colombo</title>
+<meta name="description" content="LaundroPlus is a premium laundry and dry cleaning boutique in Colombo. Every garment is inspected by hand before cleaning. Outlets at Cinnamon Grand, Ward Place and Trizen.">
+<meta property="og:title" content="LaundroPlus | Premium Laundry & Dry Cleaning in Colombo">
+<meta property="og:description" content="Every fabric inspected by hand before it's washed. Washing, dry cleaning, pressing and express service across Colombo.">
+<meta property="og:image" content="img/banner-four.jpg">
+<meta name="theme-color" content="#121a2e">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Set motion flags before first paint so nothing flashes
+  (function () {
+    var d = document.documentElement;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    d.classList.add('motion');
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DryCleaningOrLaundry",
+  "name": "LaundroPlus",
+  "image": "img/banner-four.jpg",
+  "telephone": "+94117555515",
+  "email": "info@laundroplus.lk",
+  "address": {"@type": "PostalAddress", "streetAddress": "331 Park Road", "addressLocality": "Colombo 05", "addressCountry": "LK"},
+  "openingHours": "Mo-Su 08:00-18:30",
+  "sameAs": ["https://www.instagram.com/laundropluslaundry/", "https://www.linkedin.com/company/laundro-plus-laundry", "https://web.facebook.com/people/Laundro-Plus-Laundry/61561890026233/"]
+}
+</script>
 </head>
-
 <body>
-    <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="LaundroPlus - Premium Laundry Service Logo" class="logo-img">
-            </a>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-list">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#business">For Business</a></li>
-                <li><a href="#outlets">Outlets</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="header-contact">
-                <a href="tel:+94742555515" class="phone-link">+94 74 255 5515</a>
-                <span class="divider">|</span>
-                <a href="https://wa.me/94742555515" class="whatsapp-link" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                    </svg>
-                    WhatsApp
-                </a>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-slides">
-                <div class="hero-slide active"
-                    style="background-image: url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&q=80&w=2071');"
-                    fetchpriority="high">
-                </div>
-                <div class="hero-slide"
-                    style="background-image: url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&q=80&w=2070');">
-                </div>
-                <div class="hero-slide" style="background-image: url('banner\ one.png');">
-                </div>
-                <div class="hero-slide" style="background-image: url('banner\ two.png');">
-                </div>
-                <div class="hero-slide" style="background-image: url('banner\ three.png');">
-                </div>
-                <div class="hero-slide" style="background-image: url('banner\ four.png');">
-                </div>
-                <div class="hero-slide" style="background-image: url('banner\ five.png');">
-                </div>
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <span class="hero-subtitle"></span>
-                <h1 class="hero-title">Premium Care for Your Luxury Wear</h1>
-                <p class="hero-description">We don't just wash clothes; we preserve the integrity of your most cherished
-                    garments with meticulous care and attention to detail.</p>
-                <div class="hero-btns">
-                    <a href="#services" class="btn btn-primary">Explore Our Services</a>
-                    <a href="#outlets" class="btn btn-secondary">Find an Outlet</a>
-                </div>
-            </div>
-        </section>
+<!-- Care-symbol sprite: the visual language of the whole site -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-wash" viewBox="0 0 48 48"><path d="M5 15c4.5-4 9-4 13.5 0s9 4 13.5 0 7.5-4 11 -1" fill="none" pathLength="1"/><path d="M5 15l4.5 23h29L43 14" fill="none" pathLength="1"/></symbol>
+    <symbol id="ic-dry" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" pathLength="1"/><text x="24" y="31" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="20" font-weight="500" fill="currentColor" stroke="none">P</text></symbol>
+    <symbol id="ic-iron" viewBox="0 0 48 48"><path d="M5 35h38c0-10-6-16-17-16H15" fill="none" pathLength="1"/><path d="M15 19c0-4 2-6 6-6h12" fill="none" pathLength="1"/><circle cx="18" cy="28" r="1.6" fill="currentColor" stroke="none"/><circle cx="25" cy="28" r="1.6" fill="currentColor" stroke="none"/><circle cx="32" cy="28" r="1.6" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="ic-stain" viewBox="0 0 48 48"><path d="M24 7l19 32H5z" fill="none" pathLength="1"/><path d="M19 32l10-14M25 32l6-9" fill="none" pathLength="1"/></symbol>
+    <symbol id="ic-express" viewBox="0 0 48 48"><path d="M5 15c4.5-4 9-4 13.5 0s9 4 13.5 0 7.5-4 11 -1" fill="none" pathLength="1"/><path d="M5 15l4.5 23h29L43 14" fill="none" pathLength="1"/><text x="24" y="33" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="500" fill="currentColor" stroke="none">3H</text></symbol>
+    <symbol id="ic-urgent" viewBox="0 0 48 48"><path d="M5 35h38c0-10-6-16-17-16H15" fill="none" pathLength="1"/><path d="M15 19c0-4 2-6 6-6h12" fill="none" pathLength="1"/><path d="M27 23v6" fill="none" pathLength="1"/><circle cx="27" cy="32" r="0.6" fill="none" pathLength="1"/></symbol>
+    <symbol id="ic-inspect" viewBox="0 0 48 48"><circle cx="20" cy="20" r="12" fill="none" pathLength="1"/><path d="M29 29l12 12" fill="none" pathLength="1"/><path d="M13 17h14M13 22h14M17 12v16M23 12v16" fill="none" pathLength="1" stroke-width="1" opacity=".55"/></symbol>
+    <symbol id="ic-hanger" viewBox="0 0 48 48"><path d="M21 12a3.5 3.5 0 1 1 3.5 3.5V19" fill="none" pathLength="1"/><path d="M24.5 19L6 33h37z" fill="none" pathLength="1"/></symbol>
+    <symbol id="ic-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+  </defs>
+</svg>
 
-        <!-- Services Section -->
-        <section id="services" class="services section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Our Services</h2>
-                    <p class="section-subtitle">Premium care for your garments, delivered with precision and excellence.
-                    </p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card" data-service="washing">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M2 3h20v18H2z" />
-                                <path d="M7 3v18" />
-                                <path d="M17 3v18" />
-                                <path d="M2 8h20" />
-                                <path d="M2 13h20" />
-                                <path d="M2 18h20" />
-                            </svg>
-                        </div>
-                        <h3>Washing</h3>
-                        <p>Professional washing with premium detergents and fabric-safe care to keep your garments
-                            fresh, clean, and long-lasting.</p>
-                    </div>
-                    <div class="service-card" data-service="dry-cleaning">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M12 2v20" />
-                                <path d="m4.93 4.93 14.14 14.14" />
-                                <path d="M2 12h20" />
-                                <path d="m19.07 4.93-14.14 14.14" />
-                            </svg>
-                        </div>
-                        <h3>Dry Cleaning</h3>
-                        <p>High-end dry cleaning with expert care—removing tough stains while preserving fabric quality,
-                            color, and elegance for a flawless finish.</p>
-                    </div>
-                    <div class="service-card" data-service="pressing">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M3 12h18" />
-                                <path d="M3 6h18" />
-                                <path d="M3 18h18" />
-                            </svg>
-                        </div>
-                        <h3>Pressing</h3>
-                        <p>Expert hand-finishing and steam pressing to give your garments that crisp, shop-new look.</p>
-                    </div>
-                    <div class="service-card" data-service="tailoring">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M3 3h18v18H3z" />
-                                <path d="M9 3v18" />
-                                <path d="M15 3v18" />
-                            </svg>
-                        </div>
-                        <h3>Stain Removal</h3>
-                        <p>We use expert techniques and fabric-safe solutions to remove tough stains while preserving
-                            the color, texture, and quality of your garments
-                        </p>
-                    </div>
-                    <div class="service-card" data-service="bridal">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                            </svg>
-                        </div>
-                        <h3>Express Service</h3>
-                        <p>Our express service offers a fast turnaround for your garments, delivering professionally
-                            cleaned and perfectly finished items within a few hours while maintaining our premium
-                            quality standards.</p>
-                    </div>
-                    <div class="service-card" data-service="leather">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
-                            </svg>
-                        </div>
-                        <h3>Urgent Service</h3>
-                        <p>Our urgent pressing service is designed for last-minute needs, delivering perfectly pressed
-                            garments within a short turnaround time with exceptional attention to detail. Terms and
-                            conditions apply.</p>
-                    </div>
+<a class="skip" href="#main">Skip to content</a>
 
-                </div>
-            </div>
-        </section>
+<header class="nav" id="top">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="LaundroPlus home">
+      <img src="img/logo.png" alt="" width="44" height="44">
+      <span>LaundroPlus</span>
+    </a>
+    <nav class="nav__links" id="menu" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#business">For business</a>
+      <a href="#outlets">Outlets</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a class="nav__tel" href="tel:+94117555515">+94 11 755 5515</a>
+    </nav>
+    <a class="btn btn--wa nav__wa" href="https://wa.me/94742555515" target="_blank" rel="noopener">
+      <svg width="18" height="18"><use href="#ic-wa"/></svg> WhatsApp
+    </a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
 
-        <!-- For Business Section -->
-        <section id="business" class="business section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">For Business</h2>
-                    <p class="section-subtitle">Business Partnerships Built on Quality & Trust</p>
-                </div>
-                <div class="business-content">
-                    <div class="business-text">
-                        <h3>Elevate Your Standards</h3>
-                        <p>Laundroplus partners with hotels and hospitality providers to deliver premium laundry
-                            solutions, ensuring exceptional linen quality and a seamless experience for every guest.</p>
-                        <ul class="business-features">
-                            <li><strong>Hospitality:</strong> Expert care for hotel linen, towels, and guest garments,
-                                maintaining the highest standards of cleanliness, freshness, and presentation..</li>
-                            <li><strong>Corporate:</strong> Professional cleaning and pressing for staff uniforms,
-                                ensuring a polished and consistent appearance across your team.</li>
-                            <li><strong>Events:</strong> Priority laundry and pressing services to support
-                                time-sensitive hospitality operations and special events.
-                            </li>
-                        </ul>
-                        <a href="#contact" class="btn btn-secondary">Inquire About Business Solutions</a>
-                    </div>
-                    <div class="business-image">
-                        <img src="room.jpg" alt="Hotel room linen cleaned by LaundroPlus business laundry solutions"
-                            class="img-fluid" loading="lazy">
-                    </div>
-                </div>
+<main id="main">
 
-                <!-- Client Logos Marquee -->
-                <!-- <div class="client-logos-wrapper">
-                    <p class="trusted-by">Trusted by Luxury Brands</p>
-                    <div class="logos-marquee">
-                        <div class="logos-track">
-                            
-                            <div class="logos-group">
-                                <div class="logo-item">The Ritz-Carlton</div>
-                                <div class="logo-item">St. Regis</div>
-                                <div class="logo-item">Four Seasons</div>
-                                <div class="logo-item">Mandarin Oriental</div>
-                                <div class="logo-item">The Peninsula</div>
-                                <div class="logo-item">Waldorf Astoria</div>
-                            </div>
-                           
-                            <div class="logos-group" aria-hidden="true">
-                                <div class="logo-item">The Ritz-Carlton</div>
-                                <div class="logo-item">St. Regis</div>
-                                <div class="logo-item">Four Seasons</div>
-                                <div class="logo-item">Mandarin Oriental</div>
-                                <div class="logo-item">The Peninsula</div>
-                                <div class="logo-item">Waldorf Astoria</div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-
-            </div>
-        </section>
-
-        <!-- Outlets Section -->
-        <section id="outlets" class="outlets section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Our Outlets</h2>
-                    <p class="section-subtitle">Visit our luxury boutiques</p>
-                </div>
-                <div class="outlets-wrapper">
-                    <div class="outlets-list">
-                        <div class="outlet-card active" data-location="mayfair">
-                            <h3>Cinnamon Grand</h3>
-                            <p>77 Galle Road, Colombo 05</p>
-                            <p>Hotline:<a href="tel:+94117555517"> +94 11 755 5517</p></a>
-                            <span class="opening-hours">Mon-Sun: 8am - 6.30pm</span>
-                        </div>
-                        <div class="outlet-card" data-location="chelsea">
-                            <h3>Ward Place</h3>
-                            <p>32 Ward Place, Colombo 07</p>
-                            <p>Hotline:<a href="tel:+94117555518"> +94 11 755 5518</p></a>
-                            <span class="opening-hours">Mon-Sun: 8am - 6.30pm</span>
-                        </div>
-                        <div class="outlet-card" data-location="knightsbridge">
-                            <h3>Trizen</h3>
-                            <p>Tower 1, M floor.</p>
-                            <p><i>Only for Trizen Apartment Residents</i></p>
-                            <span class="opening-hours">Mon-Sun: 8am - 6.30pm</span>
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <!-- Real Google Maps Iframe -->
-                        <iframe id="google-map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.772321722565!2d79.84532957403337!3d6.917800793081797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259004741ec17%3A0x6d810d8b8de10559!2sLaundro%20Plus%20-%20Cinnamon%20Grand!5e0!3m2!1sen!2slk!4v1774576894723!5m2!1sen!2slk"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Reviews Section -->
-        <section id="reviews" class="reviews section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Client Experiences</h2>
-                    <p class="section-subtitle">What our discerning clients say</p>
-                </div>
-                <div class="reviews-marquee">
-                    <div class="reviews-track">
-                        <!-- Original Reviews -->
-                        <div class="review-card">
-                            <div class="review-stars">★★★★</div>
-                            <p class="review-text">"A very organized placed to do your laundry
-
-                                Try it out , i recommend it due to the service i have been getting !"</p>
-                            <span class="review-author">— Jazz I</span>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">"Just collected my clothes from Laundro Plus and I'm very pleased.
-                                Excellent quick service and a quality finish. Highly recommended."</p>
-                            <span class="review-author">— Hasan Cader</span>
-                        </div>
-                        <!-- New Reviews -->
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">"They provide extremely professional and fast service. Since I’m
-                                always traveling, I rely on them for my last-minute laundry needs, as they complete
-                                everything within a maximum of 3 hours. The staff is friendly and the service is very
-                                convenient."</p>
-                            <span class="review-author">— Shane Shantol</span>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">"Best laundry in town. Great staff/customer service, ample parking,
-                                affordable, premium output (fabric is soft and smells great, well packed), and quick
-                                turnaround."</p>
-                            <span class="review-author">— Sanjay Weerakoon</span>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">"Managed to get a suit dry cleaned within one day. Was the cheapest
-                                of all the places checked."</p>
-                            <span class="review-author">— Gayan De Alwis</span>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">"One of the best laundries, professional services, good customer
-                                care, staff is very professional and friendly"</p>
-                            <span class="review-author">— Nithya Darshani</span>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">"One of the best laundries, professional services, good customer
-                                care, staff is very professional and friendly"</p>
-                            <span class="review-author">— Nithya Darshani</span>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">“I was truly impressed by the team’s quick response, sincere effort,
-                                and kindness in arranging to send my T-shirt back to Japan. A trustworthy and caring
-                                service—highly recommended."</p>
-                            <span class="review-author">— TOMOYO</span>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">“Luxury brands can be cleaned and clothes can be dry cleaned, which
-                                is very helpful to me."</p>
-                            <span class="review-author">— 阿乐</span>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-text">“Great place and friendly staff. If you don’t like too much plastic
-                                waste pls asked them to fold cloths than hangers."</p>
-                            <span class="review-author">— Nad Ranasinghe
-
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact section">
-            <div class="container">
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <h2 class="section-title">Get in Touch</h2>
-                        <p>Connect with us or visit our outlet for professional laundry solutions.</p>
-                        <ul class="contact-details">
-                            <li>
-                                <strong>Address:</strong> No, 331 Park Road, Colombo 05.
-                            </li>
-                            <li>
-                                <strong>Hotline:</strong> <a href="tel:+94117555515">+94 11 755 5515</a>
-                            </li>
-                            <li>
-                                <strong>WhatsApp:</strong> <a href="https://wa.me/94742555515" class="wa-contact-link"
-                                    target="_blank">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="currentColor">
-                                        <path
-                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                                    </svg>
-                                    +94 74 255 5515</a>
-                            </li>
-                            <li>
-                                <strong>Email:</strong> <a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a>
-                            </li>
-                            <li>
-                                <strong>Hours:</strong> Mon - Sun: 8am - 6.30pm
-                            </li>
-                        </ul>
-                    </div>
-                    <form class="contact-form" action="contact.php" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Full Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="form-group">
-                            <select name="service" required>
-                                <option value="" disabled selected>Service Interest</option>
-                                <option value="washing">Washing</option>
-                                <option value="dry-cleaning">Dry Cleaning</option>
-                                <option value="Pressing">Pressing</option>
-                                <option value="For Business">For Business</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col brand">
-                    <img src="logo.png" alt="LaundroPlus - Premium Laundry Service Logo" class="footer-logo-img"
-                        loading="lazy">
-                    <p class="footer-tagline">Standards,<br>Not Just Service .</p>
-                    <div class="social-links">
-                        <a href="https://web.facebook.com/people/Laundro-Plus-Laundry/61561890026233/"
-                            aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                            </svg>
-                        </a>
-                        <a href="https://wa.me/94742555515" aria-label="WhatsApp" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/laundropluslaundry/" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                        </a>
-                        <!---<a href="#" aria-label="Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                            </svg>
-                        </a> --->
-                        <a href="https://www.linkedin.com/company/laundro-plus-laundry" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                <rect x="2" y="9" width="4" height="12" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-col links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#business">For Business</a></li>
-                        <li><a href="#outlets">Our Outlets</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col services">
-                    <h4>Our Expertise</h4>
-                    <ul>
-                        <li><a href="#services">Dry Cleaning</a></li>
-                        <li><a href="#services">Washing</a></li>
-                        <li><a href="#services">Pressing</a></li>
-                        <li><a href="#services">Stain Removal</a></li>
-                        <li><a href="#services">Express and Urgent</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col contact">
-                    <h4>Contact Us</h4>
-                    <p>No 331, Park Road,<br>Colombo 05.</p>
-                    <p><a href="tel:+94117555515">+94 11 755 5515</a></p>
-                    <p><a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a></p>
-                </div>
-
-                <div class="footer-col newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to receive luxury garment care tips and exclusive offers.</p>
-                    <form class="footer-newsletter-form">
-                        <input type="email" placeholder="Your Email" required>
-                        <button type="submit">Join</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 LaundroPlus. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="back-to-top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="18 15 12 9 6 15" />
-        </svg>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__slides" aria-hidden="true">
+      <picture class="is-active"><source media="(max-width:760px)" srcset="img/banner-four-sm.jpg"><img src="img/banner-four.jpg" alt=""></picture>
+      <picture><source media="(max-width:760px)" srcset="img/banner-five-sm.jpg"><img src="img/banner-five.jpg" alt="" loading="lazy"></picture>
+      <picture><source media="(max-width:760px)" srcset="img/banner-three-sm.jpg"><img src="img/banner-three.jpg" alt="" loading="lazy"></picture>
+    </div>
+    <div class="hero__content wrap">
+      <p class="eyebrow">Laundry &amp; dry cleaning · Colombo</p>
+      <h1 id="hero-title">Fine fabric doesn’t follow <em>general rules.</em></h1>
+      <p class="hero__lede">So we don’t either. Every garment is inspected by hand before it’s washed, then cleaned the way its fabric asks to be.</p>
+      <div class="hero__cta">
+        <a class="btn btn--light" href="#outlets">Find an outlet</a>
+        <a class="btn btn--ghost" href="#services">See our services</a>
+      </div>
     </div>
 
-    <!-- Track Order Floating Button (HIDDEN)
-    <div class="track-btn" id="open-track">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path
-                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-            <line x1="12" y1="22.08" x2="12" y2="12" />
-        </svg>
-        <span>Track Order</span>
-    </div> -->
+    <!-- Signature: a boutique swing tag -->
+    <aside class="tag" aria-label="Our care promise">
+      <svg class="tag__string" viewBox="0 0 40 160" preserveAspectRatio="none" aria-hidden="true"><path d="M20 160C4 118 36 70 14 0"/></svg>
+      <div class="tag__card">
+        <span class="tag__eyelet" aria-hidden="true"></span>
+        <img class="tag__logo" src="img/logo.png" alt="" width="54" height="54">
+        <p class="tag__eyebrow">Our care promise</p>
+        <ul class="tag__list">
+          <li><svg aria-hidden="true"><use href="#ic-inspect"/></svg><span>Checked by hand <em>before</em> it’s cleaned</span></li>
+          <li><svg aria-hidden="true"><use href="#ic-dry"/></svg><span>Cleaned the way <em>its fabric</em> needs</span></li>
+          <li><svg aria-hidden="true"><use href="#ic-iron"/></svg><span>Pressed and finished <em>by hand</em></span></li>
+        </ul>
+        <p class="tag__foot">LaundroPlus · Colombo</p>
+      </div>
+    </aside>
+  </section>
 
-    <!-- Track Order Overlay (HIDDEN)
-    <div class="track-overlay" id="track-overlay">
-        <div class="track-modal">
-            <button class="track-close" id="close-track">&times;</button>
-            <h3>Track My Order</h3>
-            <p>Enter your order number to see the current status and bill value.</p>
-            <div class="track-form">
-                <input type="text" id="order-id" placeholder="Order Number (e.g., LP001)">
-                <button class="btn btn-primary" id="track-submit">Track</button>
-            </div>
-            <div id="track-result" class="track-result hidden">
-                <div class="result-details">
-                    <div class="result-item">
-                        <strong>Status:</strong>
-                        <span id="result-status">—</span>
-                    </div>
-                    <div class="result-item">
-                        <strong>Bill Value:</strong>
-                        <span id="result-bill">—</span>
-                    </div>
-                </div>
-            </div>
+  <!-- PROCESS: a real sequence, hung on a garment rail -->
+  <section class="rail" aria-labelledby="rail-title">
+    <div class="wrap">
+      <header class="rail__head">
+        <p class="eyebrow">Our process</p>
+        <h2 id="rail-title">Nothing goes in the machine <em>until we’ve looked at it.</em></h2>
+        <p class="rail__lede">Every piece follows the same four steps, from an office shirt to a silk saree.</p>
+      </header>
+      <ol class="rail__list">
+        <li class="hang"><div class="hang__body">
+          <svg class="hang__hook" viewBox="0 0 120 64" aria-hidden="true"><path d="M52 12a8 8 0 1 1 8 8v10"/><path d="M60 30L8 62h104z"/></svg>
+          <div class="hang__card">
+            <div class="hang__top"><span class="hang__step">Step 1</span><svg class="hang__ic" aria-hidden="true"><use href="#ic-inspect"/></svg></div>
+            <h3>Inspect</h3>
+            <p>Each piece is checked by hand: care label, fabric, stains, loose buttons and small tears. Anything unusual is noted before cleaning starts.</p>
+          </div>
+        </div></li>
+        <li class="hang"><div class="hang__body">
+          <svg class="hang__hook" viewBox="0 0 120 64" aria-hidden="true"><path d="M52 12a8 8 0 1 1 8 8v10"/><path d="M60 30L8 62h104z"/></svg>
+          <div class="hang__card">
+            <div class="hang__top"><span class="hang__step">Step 2</span><svg class="hang__ic" aria-hidden="true"><use href="#ic-dry"/></svg></div>
+            <h3>Clean</h3>
+            <p>Washed or dry cleaned with a method and products chosen for that fabric, never a one-size-fits-all cycle.</p>
+          </div>
+        </div></li>
+        <li class="hang"><div class="hang__body">
+          <svg class="hang__hook" viewBox="0 0 120 64" aria-hidden="true"><path d="M52 12a8 8 0 1 1 8 8v10"/><path d="M60 30L8 62h104z"/></svg>
+          <div class="hang__card">
+            <div class="hang__top"><span class="hang__step">Step 3</span><svg class="hang__ic" aria-hidden="true"><use href="#ic-iron"/></svg></div>
+            <h3>Finish</h3>
+            <p>Steam pressed and finished by hand for sharp collars and clean creases, without shine or scorch marks.</p>
+          </div>
+        </div></li>
+        <li class="hang"><div class="hang__body">
+          <svg class="hang__hook" viewBox="0 0 120 64" aria-hidden="true"><path d="M52 12a8 8 0 1 1 8 8v10"/><path d="M60 30L8 62h104z"/></svg>
+          <div class="hang__card">
+            <div class="hang__top"><span class="hang__step">Step 4</span><svg class="hang__ic" aria-hidden="true"><use href="#ic-hanger"/></svg></div>
+            <h3>Return</h3>
+            <p>Ready on a hanger or neatly folded, whichever you prefer. Need it fast? Express gets it back within hours.</p>
+          </div>
+        </div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services section" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow eyebrow--dark">Services</p>
+        <h2 id="services-title">Read the label. <em>Then go further.</em></h2>
+        <p class="section__lede">Each service is marked with the care symbol you’ll find sewn into your garments.</p>
+      </header>
+      <div class="services__grid">
+        <article class="svc">
+          <svg class="svc__ic" aria-hidden="true"><use href="#ic-wash"/></svg>
+          <h3>Washing</h3>
+          <p>Premium detergents and fabric-safe care that keep everyday clothes fresh, soft and long-lasting.</p>
+        </article>
+        <article class="svc">
+          <svg class="svc__ic" aria-hidden="true"><use href="#ic-dry"/></svg>
+          <h3>Dry cleaning</h3>
+          <p>For suits, silks and designer pieces. Removes tough stains while protecting colour, texture and shape.</p>
+        </article>
+        <article class="svc">
+          <svg class="svc__ic" aria-hidden="true"><use href="#ic-iron"/></svg>
+          <h3>Pressing</h3>
+          <p>Steam pressing and hand finishing for sharp collars, clean creases and a shop-new look.</p>
+        </article>
+        <article class="svc">
+          <svg class="svc__ic" aria-hidden="true"><use href="#ic-stain"/></svg>
+          <h3>Stain removal</h3>
+          <p>Targeted treatment for wine, oil, ink and food stains, matched to the fabric so the colour stays true.</p>
+        </article>
+        <article class="svc svc--accent">
+          <svg class="svc__ic" aria-hidden="true"><use href="#ic-express"/></svg>
+          <h3>Express service</h3>
+          <p>Cleaned and finished within a few hours, at the same standard. Ideal when you’re travelling.</p>
+        </article>
+        <article class="svc svc--accent">
+          <svg class="svc__ic" aria-hidden="true"><use href="#ic-urgent"/></svg>
+          <h3>Urgent pressing</h3>
+          <p>For last-minute meetings and events. Garments pressed and ready in a short turnaround. Terms apply.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" aria-labelledby="team-title">
+    <picture><source media="(max-width:760px)" srcset="img/banner-one-sm.jpg"><img src="img/banner-one.jpg" alt="The LaundroPlus team in uniform" loading="lazy"></picture>
+    <div class="team__copy wrap">
+      <h2 id="team-title">The hands behind<br>every finish.</h2>
+      <p>A trained team that knows the difference between linen and lyocell, and gives a hotel towel and a silk saree the same attention.</p>
+    </div>
+  </section>
+
+  <!-- BUSINESS -->
+  <section class="business section" id="business" aria-labelledby="business-title">
+    <div class="wrap business__grid">
+      <div class="business__img">
+        <picture><source media="(max-width:760px)" srcset="img/room-sm.jpg"><img src="img/room.jpg" alt="A hotel room with freshly laundered white linen" loading="lazy"></picture>
+      </div>
+      <div class="business__copy">
+        <p class="eyebrow eyebrow--dark">For business</p>
+        <h2 id="business-title">Linen your guests <em>notice.</em></h2>
+        <p class="section__lede">We partner with hotels, offices and event teams who need consistent quality on a dependable schedule.</p>
+        <dl class="sectors">
+          <div><dt>Hospitality</dt><dd>Bed linen, towels and guest garments, cleaned and presented to hotel standard.</dd></div>
+          <div><dt>Corporate</dt><dd>Staff uniforms cleaned and pressed so your whole team looks consistent.</dd></div>
+          <div><dt>Events</dt><dd>Priority laundry and pressing for time-sensitive operations and functions.</dd></div>
+        </dl>
+        <a class="btn btn--dark" href="#contact" data-service="For business">Ask about business accounts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTLETS: styled as garment tickets -->
+  <section class="outlets section" id="outlets" aria-labelledby="outlets-title">
+    <div class="wrap">
+      <header class="section__head section__head--light">
+        <p class="eyebrow">Outlets</p>
+        <h2 id="outlets-title">Drop off at <em>a boutique near you.</em></h2>
+        <p class="section__lede">All outlets are open every day, 8.00am to 6.30pm.</p>
+      </header>
+      <div class="outlets__grid">
+        <article class="ticket">
+          <div class="ticket__top"><span class="mono">Colombo 05</span><span class="ticket__hole" aria-hidden="true"></span></div>
+          <h3>Cinnamon Grand</h3>
+          <p>77 Galle Road, Colombo 05</p>
+          <dl class="ticket__meta">
+            <div><dt>Hotline</dt><dd><a href="tel:+94117555517">+94 11 755 5517</a></dd></div>
+            <div><dt>Open</dt><dd>Mon–Sun · 8.00am–6.30pm</dd></div>
+          </dl>
+          <a class="ticket__link" href="https://www.google.com/maps/search/?api=1&query=LaundroPlus+Cinnamon+Grand+Colombo" target="_blank" rel="noopener">Get directions →</a>
+        </article>
+        <article class="ticket">
+          <div class="ticket__top"><span class="mono">Colombo 07</span><span class="ticket__hole" aria-hidden="true"></span></div>
+          <h3>Ward Place</h3>
+          <p>32 Ward Place, Colombo 07</p>
+          <dl class="ticket__meta">
+            <div><dt>Hotline</dt><dd><a href="tel:+94117555518">+94 11 755 5518</a></dd></div>
+            <div><dt>Open</dt><dd>Mon–Sun · 8.00am–6.30pm</dd></div>
+          </dl>
+          <a class="ticket__link" href="https://www.google.com/maps/search/?api=1&query=LaundroPlus+32+Ward+Place+Colombo+07" target="_blank" rel="noopener">Get directions →</a>
+        </article>
+        <article class="ticket ticket--private">
+          <div class="ticket__top"><span class="mono">Residents only</span><span class="ticket__hole" aria-hidden="true"></span></div>
+          <h3>Trizen</h3>
+          <p>Tower 1, M floor</p>
+          <dl class="ticket__meta">
+            <div><dt>Access</dt><dd>Trizen apartment residents</dd></div>
+            <div><dt>Open</dt><dd>Mon–Sun · 8.00am–6.30pm</dd></div>
+          </dl>
+          <span class="ticket__link ticket__link--muted">Private outlet</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews section" id="reviews" aria-labelledby="reviews-title">
+    <div class="wrap">
+      <header class="section__head reviews__head">
+        <div>
+          <p class="eyebrow eyebrow--dark">Reviews</p>
+          <h2 id="reviews-title">In our clients’ <em>own words.</em></h2>
         </div>
-    </div> -->
+        <div class="reviews__ctrl">
+          <button class="round" data-dir="-1" aria-label="Previous reviews">←</button>
+          <button class="round" data-dir="1" aria-label="Next reviews">→</button>
+        </div>
+      </header>
+    </div>
+    <div class="reviews__track" tabindex="0" aria-label="Customer reviews, scroll horizontally">
+      <figure class="quote"><blockquote>“They complete everything within a maximum of three hours. Since I’m always travelling, I rely on them for last-minute laundry. The staff are friendly and the service is very convenient.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Shane Shantol</figcaption></figure>
+      <figure class="quote"><blockquote>“Best laundry in town. Great staff, ample parking, premium output. Fabric is soft, smells great and is well packed, with a quick turnaround.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Sanjay Weerakoon</figcaption></figure>
+      <figure class="quote"><blockquote>“I was truly impressed by the team’s quick response, sincere effort and kindness in arranging to send my T-shirt back to Japan. A trustworthy and caring service.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Tomoyo</figcaption></figure>
+      <figure class="quote"><blockquote>“Just collected my clothes and I’m very pleased. Excellent quick service and a quality finish. Highly recommended.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Hasan Cader</figcaption></figure>
+      <figure class="quote"><blockquote>“Managed to get a suit dry cleaned within one day. The best value of all the places I checked.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Gayan De Alwis</figcaption></figure>
+      <figure class="quote"><blockquote>“Luxury brands can be cleaned and clothes can be dry cleaned, which is very helpful to me.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>阿乐</figcaption></figure>
+      <figure class="quote"><blockquote>“One of the best laundries. Professional service, good customer care, and the staff are very friendly.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Nithya Darshani</figcaption></figure>
+      <figure class="quote"><blockquote>“Great place and friendly staff. If you don’t like plastic waste, ask them to fold your clothes instead of using hangers.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Nad Ranasinghe</figcaption></figure>
+      <figure class="quote"><blockquote>“A very organised place to do your laundry. I recommend it because of the service I’ve been getting.”</blockquote><figcaption><span class="stars" aria-label="4 out of 5">★★★★<span class="star-off">★</span></span>Jazz I</figcaption></figure>
+    </div>
+  </section>
 
+  <!-- CONTACT -->
+  <section class="contact section" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact__grid">
+      <div>
+        <p class="eyebrow eyebrow--dark">Contact</p>
+        <h2 id="contact-title">Tell us what <em>needs care.</em></h2>
+        <p class="section__lede">Message us on WhatsApp for the fastest reply, or call the hotline.</p>
+        <dl class="details">
+          <div><dt>Head office</dt><dd>331 Park Road, Colombo 05</dd></div>
+          <div><dt>Hotline</dt><dd><a href="tel:+94117555515">+94 11 755 5515</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/94742555515" target="_blank" rel="noopener">+94 74 255 5515</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a></dd></div>
+          <div><dt>Hours</dt><dd>Mon–Sun · 8.00am–6.30pm</dd></div>
+        </dl>
+      </div>
+      <form class="form" id="contact-form" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone number</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+        </div>
+        <fieldset class="field">
+          <legend>What do you need?</legend>
+          <div class="chips">
+            <label><input type="radio" name="service" value="Washing" checked><span>Washing</span></label>
+            <label><input type="radio" name="service" value="Dry cleaning"><span>Dry cleaning</span></label>
+            <label><input type="radio" name="service" value="Pressing"><span>Pressing</span></label>
+            <label><input type="radio" name="service" value="Express service"><span>Express</span></label>
+            <label><input type="radio" name="service" value="For business"><span>Business account</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="For example: two suits and a silk dress, needed by Friday"></textarea>
+        </div>
+        <p class="form__error" id="form-error" role="alert"></p>
+        <button class="btn btn--wa btn--block" type="submit"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> Send on WhatsApp</button>
+        <p class="form__note">Opens WhatsApp with your message ready to send. Prefer email? <a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a></p>
+      </form>
+    </div>
+  </section>
+</main>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/94742555515" class="wa-floating-btn" target="_blank" aria-label="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg>
-    </a>
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <img src="img/logo.png" alt="" width="64" height="64">
+      <p>Premium laundry and dry cleaning, Colombo.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#business">For business</a>
+      <a href="#outlets">Outlets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <nav aria-label="Social">
+      <a href="https://www.instagram.com/laundropluslaundry/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://web.facebook.com/people/Laundro-Plus-Laundry/61561890026233/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.linkedin.com/company/laundro-plus-laundry" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://wa.me/94742555515" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
+  <div class="wrap footer__base"><span>© <span id="year">2026</span> LaundroPlus</span><span class="mono">Mon–Sun · 8.00am–6.30pm</span></div>
+</footer>
 
-    <!-- Supabase JS Client Library -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<a class="fab" href="https://wa.me/94742555515" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="26" height="26"><use href="#ic-wa"/></svg></a>
 
-    <script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script src="motion.js"></script>
+<!-- Chat assistant: set data-endpoint to your deployed Worker URL + /chat to switch it on -->
+<script src="chat.js" data-endpoint="https://laundroplus-agent.laundroplus-agent.workers.dev/chat"></script>
 </body>
-
-
 </html>
