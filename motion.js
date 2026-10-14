@@ -48,7 +48,7 @@
   h1.replaceChildren(frag);
 
   const words = h1.querySelectorAll('.w__i');
-  const bits = document.querySelectorAll('.hero .eyebrow, .hero__lede, .hero__cta, .tag');
+  const bits = document.querySelectorAll('.hero .eyebrow, .hero__lede, .hero__cta');
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.15 });
   tl.from(words, { yPercent: 105, duration: 1.1, stagger: 0.05 })
     .from(bits, { autoAlpha: 0, y: 12, duration: 0.9, stagger: 0.08 }, '-=0.7');
