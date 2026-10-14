@@ -12,7 +12,7 @@
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script>
   // Set motion flags before first paint so nothing flashes
@@ -426,6 +426,8 @@
 <script src="script.js"></script>
 <script src="motion.js"></script>
 <!-- Chat assistant: set data-endpoint to your deployed Worker URL + /chat to switch it on -->
+<!-- Font switcher: loads only when previewing on this computer, never on the live website -->
+<script>if (location.hostname === 'localhost') { var s = document.createElement('script'); s.src = 'font-switcher.js'; document.body.appendChild(s); }</script>
 <script src="chat.js" data-endpoint="https://laundroplus-agent.laundroplus-agent.workers.dev/chat"></script>
 </body>
 </html>

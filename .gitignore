@@ -2,3 +2,5 @@ agent/
 .claude/
 *.code-workspace
 img/*.svg
+font-preview.html
+font-switcher.js
