@@ -694,6 +694,31 @@ em { font-style: italic; }
 .chat-teaser__chips button:hover { background: var(--brass); color: var(--white); }
 @media (max-width: 760px) { .chat-teaser { right: 16px; bottom: 92px; } }
 
+/* ---------- Speed selector ---------- */
+.speed { background: var(--linen); }
+.speed__card { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: clamp(24px, 4vw, 48px); }
+.speed__track { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); }
+.speed__track::before { content: ""; position: absolute; left: 12.5%; right: 12.5%; top: 21px; height: 2px; background: var(--line); }
+.speed__fill { position: absolute; left: 12.5%; top: 21px; height: 2px; width: 0; background: var(--brass); transition: width .45s var(--ease); }
+.stop { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 0 4px; background: none; border: 0; cursor: pointer; font: inherit; color: var(--steam-dk); }
+.stop__dot { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 2px solid var(--line); background: var(--white); transition: border-color .3s, background .3s, transform .3s var(--ease); }
+.stop__dot svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.stop b { font: 500 17px/1.2 var(--display); color: var(--ink); }
+.stop small { font-size: 13px; }
+.stop[aria-checked="true"] .stop__dot { border-color: var(--brass); background: var(--midnight); color: var(--brass-lt); transform: scale(1.08); }
+.speed__result { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1.4fr 1fr auto; gap: 24px; align-items: center; }
+.speed__ready { font: 500 clamp(24px, 3vw, 36px)/1.15 var(--display); }
+.speed__ready em { color: var(--brass); }
+.speed__charge { font-size: 15px; color: var(--steam-dk); }
+.speed__charge b { display: block; font: 500 22px/1.2 var(--display); color: var(--ink); }
+.speed__note { margin-top: 18px; font-size: 13.5px; color: var(--steam-dk); }
+@media (max-width: 760px) {
+  .stop small { display: none; }
+  .stop b { font-size: 14px; }
+  .speed__result { grid-template-columns: 1fr; }
+  .speed__result .btn { width: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }

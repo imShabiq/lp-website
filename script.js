@@ -98,5 +98,53 @@
     window.open(`https://wa.me/94742555515?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
   });
 
+  // Speed selector: live "ready by" estimate in Colombo time
+  const speedStops = [...document.querySelectorAll('#speed .stop')];
+  if (speedStops.length) {
+    const OPEN = 8 * 60, CLOSE = 18 * 60 + 30;
+    const WA = 'https://wa.me/94742555515?text=';
+    const colombo = () => new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' }));
+    const mins = (d) => d.getHours() * 60 + d.getMinutes();
+    const fmtTime = (d) => d.toLocaleTimeString('en-GB', { hour: 'numeric', minute: '2-digit', hour12: true }).replace(' ', '').replace(':', '.').toLowerCase();
+    const fmtDay = (d, now) => {
+      const diff = Math.round((new Date(d).setHours(0, 0, 0, 0) - new Date(now).setHours(0, 0, 0, 0)) / 864e5);
+      return diff === 0 ? 'today' : diff === 1 ? 'tomorrow' : d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short' });
+    };
+    const atOpen = (d, addDays) => { const x = new Date(d); x.setDate(x.getDate() + addDays); x.setHours(8, 0, 0, 0); return x; };
+    const dropOff = (n) => (mins(n) < OPEN ? atOpen(n, 0) : mins(n) >= CLOSE ? atOpen(n, 1) : n);
+    const SPEEDS = [
+      { name: 'Standard', charge: 'Standard price', calc: (n) => { const r = new Date(dropOff(n)); r.setDate(r.getDate() + 2); r.setHours(18, 30, 0, 0); return `Ready <em>${fmtDay(r, n)}</em> by 6.30pm`; } },
+      { name: 'One-day', charge: '+25% on the standard price', calc: (n) => { const r = new Date(dropOff(n).getTime() + 24 * 36e5); return `Ready <em>${fmtDay(r, n)}</em> by ${fmtTime(r)}`; } },
+      { name: 'Express', charge: '+50% on the standard price', calc: (n) => {
+          const m = mins(n);
+          if (m >= OPEN && m <= CLOSE - 360) return `Ready <em>today</em> by ${fmtTime(new Date(n.getTime() + 6 * 36e5))}`;
+          const r = m < OPEN ? atOpen(n, 0) : atOpen(n, 1); r.setHours(14, 0);
+          return `Ready <em>${fmtDay(r, n)}</em> by 2pm`; } },
+      { name: 'Urgent pressing', charge: '+100% (double) the standard price', calc: (n) => {
+          const m = mins(n);
+          return m >= OPEN && m < CLOSE - 120 ? 'Ready <em>within a few hours</em>, today'
+            : `Ready <em>${m < OPEN ? 'this morning' : 'tomorrow morning'}</em>, a few hours after we open`; } },
+    ];
+    const pickSpeed = (i) => {
+      speedStops.forEach((s, j) => s.setAttribute('aria-checked', String(j === i)));
+      document.getElementById('speed-fill').style.width = `${(i / 3) * 75}%`;
+      const s = SPEEDS[i];
+      document.getElementById('speed-ready').innerHTML = s.calc(colombo());
+      document.getElementById('speed-charge').innerHTML = `<b>${s.name}</b>${s.charge}`;
+      document.getElementById('speed-book').href = WA + encodeURIComponent(`Hello LaundroPlus, I'd like ${s.name} service.`);
+    };
+    speedStops.forEach((s, i) => {
+      s.addEventListener('click', () => pickSpeed(i));
+      s.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const j = (i + (e.key === 'ArrowRight' ? 1 : 3)) % 4;
+        speedStops[j].focus();
+        pickSpeed(j);
+      });
+    });
+    pickSpeed(0);
+  }
+
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
