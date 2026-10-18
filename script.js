@@ -39,7 +39,7 @@
   });
 
   // Scroll reveal
-  const revealables = document.querySelectorAll('.section__head, .svc, .ticket, .business__img, .business__copy, .contact__grid > *');
+  const revealables = document.querySelectorAll('.section__head, .svc, .ticket, .business__img, .business__copy, .contact__grid > *, .perk, .job, .apply-steps li');
   const rail = document.querySelector('.rail__list');
   if ('IntersectionObserver' in window && !reduceMotion) {
     const io = new IntersectionObserver((entries) => {
@@ -47,11 +47,13 @@
         if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    rail.classList.add('is-armed');
-    const railIo = new IntersectionObserver(([en]) => {
-      if (en.isIntersecting) { rail.classList.add('is-in'); railIo.disconnect(); }
-    }, { threshold: 0.25 });
-    railIo.observe(rail);
+    if (rail) {
+      rail.classList.add('is-armed');
+      const railIo = new IntersectionObserver(([en]) => {
+        if (en.isIntersecting) { rail.classList.add('is-in'); railIo.disconnect(); }
+      }, { threshold: 0.25 });
+      railIo.observe(rail);
+    }
     revealables.forEach((el, idx) => {
       el.classList.add('reveal');
       el.style.transitionDelay = `${(idx % 3) * 80}ms`;
@@ -70,7 +72,7 @@
   // Contact form: compose a WhatsApp message (static site, no server needed)
   const form = document.getElementById('contact-form');
   const error = document.getElementById('form-error');
-  form.addEventListener('submit', (e) => {
+  if (form) form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = new FormData(form);
     const name = (data.get('name') || '').trim();
