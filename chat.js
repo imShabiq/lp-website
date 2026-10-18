@@ -5,7 +5,7 @@
   const endpoint = (script && script.dataset.endpoint || '').trim();
   if (!endpoint) return;
 
-  const GREETING = 'Hello, welcome to LaundroPlus. How can we help with your garments today?';
+  const GREETING = 'Ayubowan! I’m the LaundroPlus web assistant. How can I help with your clothes today?';
   const WA_NUMBER = '94742555515';
   const STORE_KEY = 'lp-chat';
 
@@ -29,7 +29,7 @@
   panel.innerHTML = `
     <header class="chat__head">
       <img src="img/logo.png" alt="" width="34" height="34">
-      <div><p class="chat__title">LaundroPlus</p><p class="chat__sub">Assistant · replies in seconds</p></div>
+      <div><p class="chat__title">LaundroPlus</p><p class="chat__sub">Web assistant · replies in seconds</p></div>
       <button class="chat__close" type="button" aria-label="Close chat">×</button>
     </header>
     <div class="chat__log" role="log" aria-live="polite"></div>
@@ -93,9 +93,7 @@
   });
 
   let busy = false;
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const text = input.value.trim();
+  const send = async (text) => {
     if (!text || busy) return;
     busy = true;
     sendBtn.disabled = true;
@@ -136,5 +134,67 @@
       sendBtn.disabled = false;
       input.focus();
     }
-  });
+  };
+  form.addEventListener('submit', (e) => { e.preventDefault(); send(input.value.trim()); });
+
+  // ---- Greeting bubble: appears 1 second after arrival, once per visit, then hides itself ----
+  const TEASER_KEY = 'lp-teaser-shown';
+  let teaserShown = false;
+  try { teaserShown = sessionStorage.getItem(TEASER_KEY) === '1'; } catch (e) {}
+  if (!teaserShown && !messages.length) {
+    const teaser = document.createElement('div');
+    teaser.className = 'chat-teaser';
+    teaser.setAttribute('role', 'status');
+    teaser.innerHTML = `
+      <button class="chat-teaser__close" type="button" aria-label="Close message">×</button>
+      <div class="chat-teaser__typing" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="chat-teaser__body">
+        <p class="chat-teaser__hello">Ayubowan! Welcome to LaundroPlus 🙏</p>
+        <p class="chat-teaser__text">I’m the LaundroPlus web assistant. How can I help with your clothes today?</p>
+      </div>
+      <div class="chat-teaser__chips">
+        <button type="button">Opening hours</button>
+        <button type="button">Express service</button>
+        <button type="button">Nearest outlet</button>
+      </div>`;
+    const QUESTIONS = {
+      'Opening hours': 'What are your opening hours?',
+      'Express service': 'How does your express service work?',
+      'Nearest outlet': 'Where are your outlets?',
+    };
+    let hideTimer;
+    const hideTeaser = () => {
+      clearTimeout(hideTimer);
+      teaser.classList.remove('is-visible');
+      setTimeout(() => teaser.remove(), 400);
+      window.removeEventListener('scroll', onFarScroll);
+    };
+    const startY = () => window.scrollY;
+    let firstY = 0;
+    const onFarScroll = () => { if (Math.abs(window.scrollY - firstY) > window.innerHeight * 1.5) hideTeaser(); };
+
+    teaser.querySelector('.chat-teaser__close').addEventListener('click', hideTeaser);
+    teaser.querySelectorAll('.chat-teaser__chips button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        hideTeaser();
+        setOpen(true);
+        send(QUESTIONS[btn.textContent]);
+      });
+    });
+    launcher.addEventListener('click', hideTeaser);
+
+    setTimeout(() => {
+      if (!panel.hidden) return; // chat already open
+      document.body.appendChild(teaser);
+      void teaser.offsetHeight; // apply the start position first so the fade-in plays
+      teaser.classList.add('is-visible');
+      setTimeout(() => teaser.classList.add('is-typed'), 900); // short "typing" moment, then the message
+      try { sessionStorage.setItem(TEASER_KEY, '1'); } catch (e) {}
+      firstY = startY();
+      window.addEventListener('scroll', onFarScroll, { passive: true });
+      hideTimer = setTimeout(hideTeaser, 12000);
+      teaser.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+      teaser.addEventListener('mouseleave', () => { hideTimer = setTimeout(hideTeaser, 6000); });
+    }, 1000);
+  }
 })();
