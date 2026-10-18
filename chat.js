@@ -13,6 +13,14 @@
   try { messages = JSON.parse(sessionStorage.getItem(STORE_KEY) || '[]'); } catch (e) { messages = []; }
   const save = () => { try { sessionStorage.setItem(STORE_KEY, JSON.stringify(messages.slice(-20))); } catch (e) {} };
 
+  // A random id per visit, so the staff history page can group this visitor's questions (no personal data)
+  let conversationId = '';
+  try { conversationId = sessionStorage.getItem('lp-chat-id') || ''; } catch (e) {}
+  if (!conversationId) {
+    conversationId = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2));
+    try { sessionStorage.setItem('lp-chat-id', conversationId); } catch (e) {}
+  }
+
   // ---- Build the UI ----
   const launcher = document.createElement('button');
   launcher.className = 'chat-launch';
@@ -40,7 +48,7 @@
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </form>
-    <p class="chat__note">Automated assistant. For orders and prices, our team will follow up.</p>`;
+    <p class="chat__note">Automated assistant. Chats are saved for 30 days so our team can follow up. Please don’t share card or password details.</p>`;
   document.body.append(panel, launcher);
 
   const log = panel.querySelector('.chat__log');
@@ -112,7 +120,7 @@
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages }),
+        body: JSON.stringify({ messages, conversationId }),
       });
       const data = await res.json().catch(() => ({}));
       typing.remove();
