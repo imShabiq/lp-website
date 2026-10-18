@@ -171,7 +171,7 @@
     };
     const startY = () => window.scrollY;
     let firstY = 0;
-    const onFarScroll = () => { if (Math.abs(window.scrollY - firstY) > window.innerHeight * 1.5) hideTeaser(); };
+    const onFarScroll = () => { if (Math.abs(window.scrollY - firstY) > 30) hideTeaser(); }; // any real scroll hides it
 
     teaser.querySelector('.chat-teaser__close').addEventListener('click', hideTeaser);
     teaser.querySelectorAll('.chat-teaser__chips button').forEach((btn) => {
@@ -188,13 +188,15 @@
       document.body.appendChild(teaser);
       void teaser.offsetHeight; // apply the start position first so the fade-in plays
       teaser.classList.add('is-visible');
-      setTimeout(() => teaser.classList.add('is-typed'), 900); // short "typing" moment, then the message
+      setTimeout(() => {
+        teaser.classList.add('is-typed'); // short "typing" moment, then the message
+        hideTimer = setTimeout(hideTeaser, 3000); // message stays 3 seconds
+      }, 900);
       try { sessionStorage.setItem(TEASER_KEY, '1'); } catch (e) {}
       firstY = startY();
       window.addEventListener('scroll', onFarScroll, { passive: true });
-      hideTimer = setTimeout(hideTeaser, 12000);
       teaser.addEventListener('mouseenter', () => clearTimeout(hideTimer));
-      teaser.addEventListener('mouseleave', () => { hideTimer = setTimeout(hideTeaser, 6000); });
+      teaser.addEventListener('mouseleave', () => { hideTimer = setTimeout(hideTeaser, 3000); });
     }, 1000);
   }
 })();
