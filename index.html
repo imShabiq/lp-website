@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=202610190942">
+<link rel="stylesheet" href="styles.css?v=202610191001">
 <script>
   // Set motion flags before first paint so nothing flashes
   (function () {
@@ -132,9 +132,9 @@
     <div class="wrap facts__grid">
       <ul class="facts__list">
         <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-wash"/></svg><div><b>Standard</b><span>Ready in 2 days</span></div></li>
-        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-dry"/></svg><div><b>One-day</b><span>Ready within 24 hours</span></div></li>
-        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-express"/></svg><div><b>Express</b><span>Ready within hours</span></div></li>
-        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-iron"/></svg><div><b>Urgent pressing</b><span>For last-minute needs</span></div></li>
+        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-dry"/></svg><div><b>One-day</b><span>Ready next day after 5.30pm</span></div></li>
+        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-express"/></svg><div><b>Express</b><span>Same day, after 6.00pm</span></div></li>
+        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-iron"/></svg><div><b>Urgent pressing</b><span>Pressing in 3 hours</span></div></li>
       </ul>
       <p class="facts__note">One-day, express and urgent services carry an extra charge. Terms apply.</p>
       <figure class="facts__review">
@@ -183,7 +183,7 @@
           <div class="step__body">
             <p class="step__num">Step 4</p>
             <h3>Return</h3>
-            <p>Collect from your outlet when it's ready. Need it fast? Express gets it back to you within hours.</p>
+            <p>Collect from your outlet when it's ready. Need it fast? Hand it over by 12 noon and Express has it ready the same evening.</p>
           </div>
         </li>
       </ol>
@@ -222,7 +222,7 @@
         <article class="svc svc--accent">
           <svg class="svc__ic" aria-hidden="true"><use href="#ic-express"/></svg>
           <h3>Express service</h3>
-          <p>Cleaned and finished within a few hours, at the same standard. Ideal when you’re travelling.</p>
+          <p>Hand it over by 12 noon and it’s ready the same day after 6.00pm, at the same standard. Ideal when you’re travelling.</p>
         </article>
         <article class="svc svc--accent">
           <svg class="svc__ic" aria-hidden="true"><use href="#ic-urgent"/></svg>
@@ -243,17 +243,17 @@
       <div class="speed__card">
         <div class="speed__track" role="radiogroup" aria-label="Service speed">
           <span class="speed__fill" id="speed-fill" aria-hidden="true"></span>
-          <button class="stop" type="button" role="radio" aria-checked="true"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-cal"/></svg></span><b>Standard</b><small>2 days</small></button>
-          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-clock"/></svg></span><b>One-day</b><small>24 hours</small></button>
-          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-bolt"/></svg></span><b>Express</b><small>4–6 hours</small></button>
-          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-iron"/></svg></span><b>Urgent pressing</b><small>A few hours</small></button>
+          <button class="stop" type="button" role="radio" aria-checked="true"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-cal"/></svg></span><b>Standard</b><small>After 2 days</small></button>
+          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-clock"/></svg></span><b>One-day</b><small>Next day after 5.30pm</small></button>
+          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-bolt"/></svg></span><b>Express</b><small>Same day after 6.00pm</small></button>
+          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-iron"/></svg></span><b>Urgent pressing</b><small>Within 3 hours</small></button>
         </div>
         <div class="speed__result">
           <p class="speed__ready" id="speed-ready" aria-live="polite"></p>
           <p class="speed__charge" id="speed-charge"></p>
           <a class="btn btn--wa" id="speed-book" href="https://wa.me/94742555515" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> Book on WhatsApp</a>
         </div>
-        <p class="speed__note">Times are a guide based on dropping off now, at Colombo time. Our team confirms the exact time when you hand over your garments. Urgent and express orders are best placed at Cinnamon Grand.</p>
+        <p class="speed__note">Times are a guide based on dropping off now, at Colombo time. Express orders are accepted between 8.00am and 12 noon. Urgent service is for pressing only and is accepted until 5.30pm. Our team confirms the exact time when you hand over your garments.</p>
       </div>
     </div>
   </section>
@@ -490,7 +490,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="script.js?v=202610190942"></script>
+<script src="script.js?v=202610191001"></script>
 <script src="motion.js?v=202610181619"></script>
 <!-- Chat assistant: set data-endpoint to your deployed Worker URL + /chat to switch it on -->
 <!-- Font switcher: loads only when previewing on this computer, never on the live website -->

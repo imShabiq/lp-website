@@ -112,18 +112,20 @@
     };
     const atOpen = (d, addDays) => { const x = new Date(d); x.setDate(x.getDate() + addDays); x.setHours(8, 0, 0, 0); return x; };
     const dropOff = (n) => (mins(n) < OPEN ? atOpen(n, 0) : mins(n) >= CLOSE ? atOpen(n, 1) : n);
+    const NOON = 12 * 60, PRESS_LAST = 17 * 60 + 30;
     const SPEEDS = [
-      { name: 'Standard', charge: 'Standard price', calc: (n) => { const r = new Date(dropOff(n)); r.setDate(r.getDate() + 2); r.setHours(18, 30, 0, 0); return `Ready <em>${fmtDay(r, n)}</em> by 6.30pm`; } },
-      { name: 'One-day', charge: '+25% on the standard price', calc: (n) => { const r = new Date(dropOff(n).getTime() + 24 * 36e5); return `Ready <em>${fmtDay(r, n)}</em> by ${fmtTime(r)}`; } },
+      { name: 'Standard', charge: 'Standard price', calc: (n) => { const r = new Date(dropOff(n)); r.setDate(r.getDate() + 2); return `Ready <em>${fmtDay(r, n)}</em>, after 48 working hours`; } },
+      { name: 'One-day', charge: '+25% on the standard price', calc: (n) => (mins(n) >= OPEN && mins(n) < CLOSE ? 'Ready <em>tomorrow</em> after 5.30pm' : `Hand over <em>${mins(n) < OPEN ? 'today' : 'tomorrow'}</em> from 8.00am, ready the next day after 5.30pm`) },
       { name: 'Express', charge: '+50% on the standard price', calc: (n) => {
           const m = mins(n);
-          if (m >= OPEN && m <= CLOSE - 360) return `Ready <em>today</em> by ${fmtTime(new Date(n.getTime() + 6 * 36e5))}`;
-          const r = m < OPEN ? atOpen(n, 0) : atOpen(n, 1); r.setHours(14, 0);
-          return `Ready <em>${fmtDay(r, n)}</em> by 2pm`; } },
-      { name: 'Urgent pressing', charge: '+100% (double) the standard price', calc: (n) => {
+          if (m >= OPEN && m < NOON) return 'Ready <em>today</em> after 6.00pm';
+          const d = m < OPEN ? atOpen(n, 0) : atOpen(n, 1);
+          return `Hand over <em>${fmtDay(d, n)}</em> between 8.00am and 12 noon, ready the same day after 6.00pm`; } },
+      { name: 'Urgent pressing', charge: '+100% (double) the standard price · pressing only', calc: (n) => {
           const m = mins(n);
-          return m >= OPEN && m < CLOSE - 120 ? 'Ready <em>within a few hours</em>, today'
-            : `Ready <em>${m < OPEN ? 'this morning' : 'tomorrow morning'}</em>, a few hours after we open`; } },
+          if (m >= OPEN && m < PRESS_LAST) return `Pressed and ready <em>by ${fmtTime(new Date(n.getTime() + 3 * 36e5))}</em> today`;
+          const d = m < OPEN ? atOpen(n, 0) : atOpen(n, 1);
+          return `Hand over <em>${fmtDay(d, n)}</em> between 8.00am and 5.30pm, ready 3 hours later`; } },
     ];
     const pickSpeed = (i) => {
       speedStops.forEach((s, j) => s.setAttribute('aria-checked', String(j === i)));
