@@ -13,7 +13,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=202610191056">
+<link rel="preload" as="image" href="img/hero-shirt-sm.jpg" media="(max-width:760px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-shirt.jpg" media="(min-width:761px)" fetchpriority="high">
+<link rel="stylesheet" href="styles.css?v=202610191111">
 <script>
   // Set motion flags before first paint so nothing flashes
   (function () {
@@ -91,9 +93,10 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__slides" aria-hidden="true">
       <!-- Hero images generated for LaundroPlus with FLUX.2 [dev] (Black Forest Labs, open model): product shots, no people -->
-      <picture class="is-active hero__slide--shirt"><source media="(max-width:760px)" srcset="img/hero-shirt-sm.jpg"><img src="img/hero-shirt.jpg" alt=""></picture>
-      <picture class="hero__slide--rail"><source media="(max-width:760px)" srcset="img/hero-rail-sm.jpg"><img src="img/hero-rail.jpg" alt=""></picture>
-      <picture class="hero__slide--saree"><source media="(max-width:760px)" srcset="img/hero-saree-silk-sm.jpg"><img src="img/hero-saree-silk.jpg" alt=""></picture>
+      <picture class="is-active hero__slide--shirt"><source media="(max-width:760px)" srcset="img/hero-shirt-sm.jpg"><img src="img/hero-shirt.jpg" alt="" fetchpriority="high"></picture>
+      <picture class="hero__slide--rail"><source media="(max-width:760px)" srcset="img/hero-rail-sm.jpg"><img src="img/hero-rail.jpg" alt="" decoding="async"></picture>
+      <picture class="hero__slide--saree"><source media="(max-width:760px)" srcset="img/hero-saree-silk-sm.jpg"><img src="img/hero-saree-silk.jpg" alt="" decoding="async"></picture>
+      <picture class="hero__slide--evening"><source media="(max-width:760px)" srcset="img/hero-evening-sm.jpg"><img src="img/hero-evening.jpg" alt="" decoding="async"></picture>
       <!--
         MORE HERO BANNERS (switched off)
         To switch one on: move it ABOVE this comment block (outside the <!- - - -> marks).
@@ -117,10 +120,11 @@
     </div>
     <div class="hero__content wrap">
       <p class="eyebrow">Colombo · Open daily 8am – 6.30pm</p>
+      <span class="status hero__status" data-hours>Checking hours…</span>
       <h1 id="hero-title">Premium laundry &amp; <em>dry cleaning.</em></h1>
-      <p class="hero__lede">Washing, dry cleaning and pressing for everyday clothes, suits, silks and sarees. Every garment is inspected by hand, then cleaned the way its fabric needs.</p>
+      <p class="hero__lede">Washing, dry cleaning and pressing for everyday clothes, suits, silks and sarees.<span class="hero__more"> Every garment is inspected by hand, then cleaned the way its fabric needs.</span></p>
       <div class="hero__cta">
-        <a class="btn btn--wa" href="https://wa.me/94742555515?text=Hello%20LaundroPlus%2C%20I%27d%20like%20to%20book%20a%20laundry%20service." target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> WhatsApp us to book</a>
+        <a class="btn btn--wa" href="https://wa.me/94742555515?text=Hello%20LaundroPlus%2C%20I%27d%20like%20to%20book%20a%20laundry%20service." target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> WhatsApp us<span class="hero__more"> to book</span></a>
         <a class="btn btn--ghost" href="#outlets">Find an outlet</a>
       </div>
     </div>
@@ -491,7 +495,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="script.js?v=202610191056"></script>
+<script src="script.js?v=202610191111"></script>
 <script src="motion.js?v=202610181619"></script>
 <!-- Chat assistant: set data-endpoint to your deployed Worker URL + /chat to switch it on -->
 <!-- Font switcher: loads only when previewing on this computer, never on the live website -->
