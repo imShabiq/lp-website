@@ -146,5 +146,19 @@
     pickSpeed(0);
   }
 
+  // Outlet status: "Open now" / "Closed now" in Colombo time (daily 8.00am to 6.30pm)
+  const hoursEls = document.querySelectorAll('[data-hours]');
+  if (hoursEls.length) {
+    const setStatus = () => {
+      const t = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' }));
+      const m = t.getHours() * 60 + t.getMinutes();
+      const open = m >= 8 * 60 && m < 18 * 60 + 30;
+      const text = open ? 'Open now · closes 6.30pm' : `Closed now · opens ${m < 8 * 60 ? 'today' : 'tomorrow'} 8.00am`;
+      hoursEls.forEach((el) => { el.textContent = text; el.classList.toggle('is-closed', !open); });
+    };
+    setStatus();
+    setInterval(setStatus, 60000);
+  }
+
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
