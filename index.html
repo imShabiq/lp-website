@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-shirt-boss-sm.jpg" media="(max-width:760px)" fetchpriority="high">
 <link rel="preload" as="image" href="img/hero-shirt-boss.jpg" media="(min-width:761px)" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=202610191215">
+<link rel="stylesheet" href="styles.css?v=202610211152">
 <script>
   // Set motion flags before first paint so nothing flashes
   (function () {
@@ -68,20 +68,20 @@
       <span>LaundroPlus</span>
     </a>
     <nav class="nav__links" id="menu" aria-label="Main">
-      <a href="#services">Services</a>
-      <a href="#business">For business</a>
-      <a href="#outlets">Outlets</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact">Contact</a>
-      <a href="careers.html">Careers</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#business" data-i18n="nav_business">For business</a>
+      <a href="#outlets" data-i18n="nav_outlets">Outlets</a>
+      <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="careers.html" data-i18n="nav_careers">Careers</a>
       <a class="nav__tel" href="tel:+94117555515">+94 11 755 5515</a>
     </nav>
     <a class="btn btn--wa nav__wa" href="https://wa.me/94742555515" target="_blank" rel="noopener">
-      <svg width="18" height="18"><use href="#ic-wa"/></svg> WhatsApp
+      <svg width="18" height="18"><use href="#ic-wa"/></svg> <span data-i18n="nav_wa">WhatsApp</span>
     </a>
     <a class="nav__call" href="tel:+94117555515" aria-label="Call LaundroPlus on +94 11 755 5515">
       <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
-      <span>Call</span>
+      <span data-i18n="nav_call">Call</span>
     </a>
     <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
   </div>
@@ -120,13 +120,13 @@
       -->
     </div>
     <div class="hero__content wrap">
-      <p class="eyebrow">Colombo · Open daily 8am – 6.30pm</p>
+      <p class="eyebrow" data-i18n="hero_eyebrow">Colombo · Open daily 8am – 6.30pm</p>
       <span class="status hero__status" data-hours>Checking hours…</span>
-      <h1 id="hero-title">Premium laundry &amp; <em>dry cleaning.</em></h1>
-      <p class="hero__lede">Washing, dry cleaning and pressing for everyday clothes, suits, silks and sarees.<span class="hero__more"> Every garment is inspected by hand, then cleaned the way its fabric needs.</span></p>
+      <h1 id="hero-title" data-i18n="hero_title">Premium laundry &amp; <em>dry cleaning.</em></h1>
+      <p class="hero__lede" data-i18n="hero_lede">Washing, dry cleaning and pressing for everyday clothes, suits, silks and sarees.<span class="hero__more"> Every garment is inspected by hand, then cleaned the way its fabric needs.</span></p>
       <div class="hero__cta">
-        <a class="btn btn--wa" href="https://wa.me/94742555515?text=Hello%20LaundroPlus%2C%20I%27d%20like%20to%20book%20a%20laundry%20service." target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> WhatsApp us<span class="hero__more"> to book</span></a>
-        <a class="btn btn--ghost" href="#outlets">Find an outlet</a>
+        <a class="btn btn--wa" href="https://wa.me/94742555515?text=Hello%20LaundroPlus%2C%20I%27d%20like%20to%20book%20a%20laundry%20service." target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> <span data-i18n="hero_wa">WhatsApp us<span class="hero__more"> to book</span></span></a>
+        <a class="btn btn--ghost" href="#outlets" data-i18n="hero_find">Find an outlet</a>
       </div>
     </div>
 
@@ -136,16 +136,16 @@
   <section class="facts" aria-label="Turnaround and reviews">
     <div class="wrap facts__grid">
       <ul class="facts__list">
-        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-wash"/></svg><div><b>Standard</b><span>Ready in 2 days</span></div></li>
-        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-dry"/></svg><div><b>One-day</b><span>Ready next day after 5.30pm</span></div></li>
-        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-express"/></svg><div><b>Express</b><span>Same day, after 6.00pm</span></div></li>
-        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-iron"/></svg><div><b>Urgent pressing</b><span>Pressing in 3 hours</span></div></li>
+        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-wash"/></svg><div><b data-i18n="sp_standard">Standard</b><span data-i18n="fact_standard">Ready in 2 days</span></div></li>
+        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-dry"/></svg><div><b data-i18n="sp_oneday">One-day</b><span data-i18n="fact_oneday">Ready next day after 5.30pm</span></div></li>
+        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-express"/></svg><div><b data-i18n="sp_express">Express</b><span data-i18n="fact_express">Same day, after 6.00pm</span></div></li>
+        <li><svg class="facts__ic" aria-hidden="true"><use href="#ic-iron"/></svg><div><b data-i18n="sp_urgent">Urgent pressing</b><span data-i18n="fact_urgent">Pressing in 3 hours</span></div></li>
       </ul>
-      <p class="facts__note">One-day, express and urgent services carry an extra charge. <a href="terms.html">Terms apply.</a></p>
+      <p class="facts__note" data-i18n="fact_note">One-day, express and urgent services carry an extra charge. <a href="terms.html">Terms apply.</a></p>
       <figure class="facts__review">
         <span class="stars" aria-label="5 out of 5">★★★★★</span>
         <blockquote>“Best laundry in town. Premium output, soft fabric that smells great, and a quick turnaround.”</blockquote>
-        <figcaption>Sanjay Weerakoon · <a href="#reviews">Read more reviews</a></figcaption>
+        <figcaption>Sanjay Weerakoon · <a href="#reviews" data-i18n="fact_more">Read more reviews</a></figcaption>
       </figure>
     </div>
   </section>
@@ -154,41 +154,41 @@
   <section class="rail" aria-labelledby="rail-title">
     <div class="wrap">
       <header class="rail__head">
-        <p class="eyebrow eyebrow--dark">Our process</p>
-        <h2 id="rail-title">Nothing goes in the machine <em>until we’ve looked at it.</em></h2>
-        <p class="rail__lede">Every piece follows the same four steps, from an office shirt to a silk saree.</p>
+        <p class="eyebrow eyebrow--dark" data-i18n="rail_eyebrow">Our process</p>
+        <h2 id="rail-title" data-i18n="rail_title">Nothing goes in the machine <em>until we’ve looked at it.</em></h2>
+        <p class="rail__lede" data-i18n="rail_lede">Every piece follows the same four steps, from an office shirt to a silk saree.</p>
       </header>
       <ol class="rail__list">
         <li class="step">
           <span class="step__node" aria-hidden="true"><svg class="step__ic"><use href="#ic-inspect"/></svg></span>
           <div class="step__body">
-            <p class="step__num">Step 1</p>
-            <h3>Inspect</h3>
-            <p>Each piece is checked by hand: care label, fabric, stains, loose buttons and small tears. Anything unusual is noted before cleaning starts.</p>
+            <p class="step__num" data-i18n="step1">Step 1</p>
+            <h3 data-i18n="inspect">Inspect</h3>
+            <p data-i18n="inspect_p">Each piece is checked by hand: care label, fabric, stains, loose buttons and small tears. Anything unusual is noted before cleaning starts.</p>
           </div>
         </li>
         <li class="step">
           <span class="step__node" aria-hidden="true"><svg class="step__ic"><use href="#ic-dry"/></svg></span>
           <div class="step__body">
-            <p class="step__num">Step 2</p>
-            <h3>Clean</h3>
-            <p>Washed or dry cleaned with a method and products chosen for that fabric, never a one-size-fits-all cycle.</p>
+            <p class="step__num" data-i18n="step2">Step 2</p>
+            <h3 data-i18n="clean">Clean</h3>
+            <p data-i18n="clean_p">Washed or dry cleaned with a method and products chosen for that fabric, never a one-size-fits-all cycle.</p>
           </div>
         </li>
         <li class="step">
           <span class="step__node" aria-hidden="true"><svg class="step__ic"><use href="#ic-iron"/></svg></span>
           <div class="step__body">
-            <p class="step__num">Step 3</p>
-            <h3>Finish</h3>
-            <p>Steam pressed and finished by hand for sharp collars and clean creases, without shine or scorch marks.</p>
+            <p class="step__num" data-i18n="step3">Step 3</p>
+            <h3 data-i18n="finish">Finish</h3>
+            <p data-i18n="finish_p">Steam pressed and finished by hand for sharp collars and clean creases, without shine or scorch marks.</p>
           </div>
         </li>
         <li class="step">
           <span class="step__node" aria-hidden="true"><svg class="step__ic"><use href="#ic-hanger"/></svg></span>
           <div class="step__body">
-            <p class="step__num">Step 4</p>
-            <h3>Return</h3>
-            <p>Collect from your outlet when it's ready. Need it fast? Hand it over by 12 noon and Express has it ready the same evening.</p>
+            <p class="step__num" data-i18n="step4">Step 4</p>
+            <h3 data-i18n="return">Return</h3>
+            <p data-i18n="return_p">Collect from your outlet when it's ready. Need it fast? Hand it over by 12 noon and Express has it ready the same evening.</p>
           </div>
         </li>
       </ol>
@@ -199,40 +199,40 @@
   <section class="services section" id="services" aria-labelledby="services-title">
     <div class="wrap">
       <header class="section__head">
-        <p class="eyebrow eyebrow--dark">Services</p>
-        <h2 id="services-title">Read the label. <em>Then go further.</em></h2>
-        <p class="section__lede">Each service is marked with the care symbol you’ll find sewn into your garments.</p>
+        <p class="eyebrow eyebrow--dark" data-i18n="nav_services">Services</p>
+        <h2 id="services-title" data-i18n="svc_title">Read the label. <em>Then go further.</em></h2>
+        <p class="section__lede" data-i18n="svc_lede">Each service is marked with the care symbol you’ll find sewn into your garments.</p>
       </header>
       <div class="services__grid">
         <article class="svc">
           <svg class="svc__ic" aria-hidden="true"><use href="#ic-wash"/></svg>
-          <h3>Washing</h3>
-          <p>Premium detergents and fabric-safe care that keep everyday clothes fresh, soft and long-lasting.</p>
+          <h3 data-i18n="washing">Washing</h3>
+          <p data-i18n="washing_p">Premium detergents and fabric-safe care that keep everyday clothes fresh, soft and long-lasting.</p>
         </article>
         <article class="svc">
           <svg class="svc__ic" aria-hidden="true"><use href="#ic-dry"/></svg>
-          <h3>Dry cleaning</h3>
-          <p>For suits, silks and designer pieces. Removes tough stains while protecting colour, texture and shape.</p>
+          <h3 data-i18n="drycleaning">Dry cleaning</h3>
+          <p data-i18n="dry_p">For suits, silks and designer pieces. Removes tough stains while protecting colour, texture and shape.</p>
         </article>
         <article class="svc">
           <svg class="svc__ic" aria-hidden="true"><use href="#ic-iron"/></svg>
-          <h3>Pressing</h3>
-          <p>Steam pressing and hand finishing for sharp collars, clean creases and a shop-new look.</p>
+          <h3 data-i18n="pressing">Pressing</h3>
+          <p data-i18n="press_p">Steam pressing and hand finishing for sharp collars, clean creases and a shop-new look.</p>
         </article>
         <article class="svc">
           <svg class="svc__ic" aria-hidden="true"><use href="#ic-stain"/></svg>
-          <h3>Stain removal</h3>
-          <p>Targeted treatment for wine, oil, ink and food stains, matched to the fabric so the colour stays true.</p>
+          <h3 data-i18n="stain">Stain removal</h3>
+          <p data-i18n="stain_p">Targeted treatment for wine, oil, ink and food stains, matched to the fabric so the colour stays true.</p>
         </article>
         <article class="svc svc--accent">
           <svg class="svc__ic" aria-hidden="true"><use href="#ic-express"/></svg>
-          <h3>Express service</h3>
-          <p>Hand it over by 12 noon and it’s ready the same day after 6.00pm, at the same standard. Ideal when you’re travelling.</p>
+          <h3 data-i18n="express_svc">Express service</h3>
+          <p data-i18n="express_p">Hand it over by 12 noon and it’s ready the same day after 6.00pm, at the same standard. Ideal when you’re travelling.</p>
         </article>
         <article class="svc svc--accent">
           <svg class="svc__ic" aria-hidden="true"><use href="#ic-urgent"/></svg>
-          <h3>Urgent pressing</h3>
-          <p>For last-minute meetings and events. Garments pressed and ready in a short turnaround. <a href="terms.html">Terms apply.</a></p>
+          <h3 data-i18n="sp_urgent">Urgent pressing</h3>
+          <p data-i18n="urgent_p">For last-minute meetings and events. Garments pressed and ready in a short turnaround. <a href="terms.html">Terms apply.</a></p>
         </article>
       </div>
     </div>
@@ -242,23 +242,23 @@
   <section class="speed section" id="speed" aria-labelledby="speed-title">
     <div class="wrap">
       <header class="section__head">
-        <p class="eyebrow eyebrow--dark">Choose your speed</p>
-        <h2 id="speed-title">When do you <em>need it back?</em></h2>
+        <p class="eyebrow eyebrow--dark" data-i18n="speed_eyebrow">Choose your speed</p>
+        <h2 id="speed-title" data-i18n="speed_title">When do you <em>need it back?</em></h2>
       </header>
       <div class="speed__card">
         <div class="speed__track" role="radiogroup" aria-label="Service speed">
           <span class="speed__fill" id="speed-fill" aria-hidden="true"></span>
-          <button class="stop" type="button" role="radio" aria-checked="true"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-cal"/></svg></span><b>Standard</b><small>After 2 days</small></button>
-          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-clock"/></svg></span><b>One-day</b><small>Next day after 5.30pm</small></button>
-          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-bolt"/></svg></span><b>Express</b><small>Same day after 6.00pm</small></button>
-          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-iron"/></svg></span><b>Urgent pressing</b><small>Within 3 hours</small></button>
+          <button class="stop" type="button" role="radio" aria-checked="true"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-cal"/></svg></span><b data-i18n="sp_standard">Standard</b><small data-i18n="stop_standard">After 2 days</small></button>
+          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-clock"/></svg></span><b data-i18n="sp_oneday">One-day</b><small data-i18n="stop_oneday">Next day after 5.30pm</small></button>
+          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-bolt"/></svg></span><b data-i18n="sp_express">Express</b><small data-i18n="stop_express">Same day after 6.00pm</small></button>
+          <button class="stop" type="button" role="radio" aria-checked="false"><span class="stop__dot"><svg aria-hidden="true"><use href="#ic-iron"/></svg></span><b data-i18n="sp_urgent">Urgent pressing</b><small data-i18n="stop_urgent">Within 3 hours</small></button>
         </div>
         <div class="speed__result">
           <p class="speed__ready" id="speed-ready" aria-live="polite"></p>
           <p class="speed__charge" id="speed-charge"></p>
-          <a class="btn btn--wa" id="speed-book" href="https://wa.me/94742555515" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> Book on WhatsApp</a>
+          <a class="btn btn--wa" id="speed-book" href="https://wa.me/94742555515" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> <span data-i18n="book_wa">Book on WhatsApp</span></a>
         </div>
-        <p class="speed__note">Times are a guide based on dropping off now, at Colombo time. Express orders are accepted between 8.00am and 12 noon. Urgent service is for pressing only, accepted until 5.30pm at our Cinnamon Grand outlet. Our team confirms the exact time when you hand over your garments.</p>
+        <p class="speed__note" data-i18n="speed_note">Times are a guide based on dropping off now, at Colombo time. Express orders are accepted between 8.00am and 12 noon. Urgent service is for pressing only, accepted until 5.30pm at our Cinnamon Grand outlet. Our team confirms the exact time when you hand over your garments.</p>
       </div>
     </div>
   </section>
@@ -267,14 +267,14 @@
   <section class="workroom" aria-labelledby="workroom-title">
     <div class="wrap">
       <header class="section__head section__head--light">
-        <p class="eyebrow">Inside our workroom</p>
-        <h2 id="workroom-title">Clean, pressed and <em>ready to wear.</em></h2>
+        <p class="eyebrow" data-i18n="work_eyebrow">Inside our workroom</p>
+        <h2 id="workroom-title" data-i18n="work_title">Clean, pressed and <em>ready to wear.</em></h2>
       </header>
       <div class="workroom__grid">
-        <figure><img src="img/work-label.jpg" alt="Close-up of a garment's care label with laundry symbols" loading="lazy" width="720" height="900"><figcaption>Every care label read first</figcaption></figure>
-        <figure><img src="img/work-iron.jpg" alt="A steam iron on a pressing board beside a pressed white shirt" loading="lazy" width="720" height="900"><figcaption>Steam pressed and hand finished</figcaption></figure>
-        <figure><img src="img/work-suit-cover.jpg" alt="A cleaned charcoal suit jacket hanging with a tag" loading="lazy" width="720" height="900"><figcaption>Suits cleaned and finished with care</figcaption></figure>
-        <figure><img src="img/work-towels.jpg" alt="A stack of folded white towels on a wooden shelf" loading="lazy" width="720" height="900"><figcaption>Linen and towels, freshly folded</figcaption></figure>
+        <figure><img src="img/work-label.jpg" alt="Close-up of a garment's care label with laundry symbols" loading="lazy" width="720" height="900"><figcaption data-i18n="work_1">Every care label read first</figcaption></figure>
+        <figure><img src="img/work-iron.jpg" alt="A steam iron on a pressing board beside a pressed white shirt" loading="lazy" width="720" height="900"><figcaption data-i18n="work_2">Steam pressed and hand finished</figcaption></figure>
+        <figure><img src="img/work-suit-cover.jpg" alt="A cleaned charcoal suit jacket hanging with a tag" loading="lazy" width="720" height="900"><figcaption data-i18n="work_3">Suits cleaned and finished with care</figcaption></figure>
+        <figure><img src="img/work-towels.jpg" alt="A stack of folded white towels on a wooden shelf" loading="lazy" width="720" height="900"><figcaption data-i18n="work_4">Linen and towels, freshly folded</figcaption></figure>
       </div>
     </div>
   </section>
@@ -283,8 +283,8 @@
   <section class="team" aria-labelledby="team-title">
     <picture><source media="(max-width:760px)" srcset="img/banner-one-sm.jpg"><img src="img/banner-one.jpg" alt="The LaundroPlus team in uniform" loading="lazy"></picture>
     <div class="team__copy wrap">
-      <h2 id="team-title">The hands behind<br>every finish.</h2>
-      <p>A trained team that knows the difference between linen and lyocell, and gives a hotel towel and a silk saree the same attention.</p>
+      <h2 id="team-title" data-i18n="team_title">The hands behind<br>every finish.</h2>
+      <p data-i18n="team_p">A trained team that knows the difference between linen and lyocell, and gives a hotel towel and a silk saree the same attention.</p>
     </div>
   </section>
 
@@ -295,15 +295,15 @@
         <picture><source media="(max-width:760px)" srcset="img/room-sm.jpg"><img src="img/room.jpg" alt="A hotel room with freshly laundered white linen" loading="lazy"></picture>
       </div>
       <div class="business__copy">
-        <p class="eyebrow eyebrow--dark">For business</p>
-        <h2 id="business-title">Linen your guests <em>notice.</em></h2>
-        <p class="section__lede">We partner with hotels, offices and event teams who need consistent quality on a dependable schedule.</p>
+        <p class="eyebrow eyebrow--dark" data-i18n="nav_business">For business</p>
+        <h2 id="business-title" data-i18n="biz_title">Linen your guests <em>notice.</em></h2>
+        <p class="section__lede" data-i18n="biz_lede">We partner with hotels, offices and event teams who need consistent quality on a dependable schedule.</p>
         <dl class="sectors">
-          <div><dt>Hospitality</dt><dd>Bed linen, towels and guest garments, cleaned and presented to hotel standard.</dd></div>
-          <div><dt>Corporate</dt><dd>Staff uniforms cleaned and pressed so your whole team looks consistent.</dd></div>
-          <div><dt>Events</dt><dd>Priority laundry and pressing for time-sensitive operations and functions.</dd></div>
+          <div><dt data-i18n="biz_h">Hospitality</dt><dd data-i18n="biz_h_d">Bed linen, towels and guest garments, cleaned and presented to hotel standard.</dd></div>
+          <div><dt data-i18n="biz_c">Corporate</dt><dd data-i18n="biz_c_d">Staff uniforms cleaned and pressed so your whole team looks consistent.</dd></div>
+          <div><dt data-i18n="biz_e">Events</dt><dd data-i18n="biz_e_d">Priority laundry and pressing for time-sensitive operations and functions.</dd></div>
         </dl>
-        <a class="btn btn--dark" href="#contact" data-service="For business">Ask about business accounts</a>
+        <a class="btn btn--dark" href="#contact" data-service="For business" data-i18n="biz_btn">Ask about business accounts</a>
       </div>
     </div>
   </section>
@@ -312,9 +312,9 @@
   <section class="outlets section" id="outlets" aria-labelledby="outlets-title">
     <div class="wrap">
       <header class="section__head section__head--light">
-        <p class="eyebrow">Outlets</p>
-        <h2 id="outlets-title">Drop off at <em>a boutique near you.</em></h2>
-        <p class="section__lede">All outlets are open every day, 8.00am to 6.30pm.</p>
+        <p class="eyebrow" data-i18n="nav_outlets">Outlets</p>
+        <h2 id="outlets-title" data-i18n="out_title">Drop off at <em>a boutique near you.</em></h2>
+        <p class="section__lede" data-i18n="out_lede">All outlets are open every day, 8.00am to 6.30pm.</p>
       </header>
       <div class="outlets__grid">
         <article class="ticket">
@@ -323,10 +323,10 @@
           <p>77 Galle Road, Colombo 05</p>
           <span class="status" data-hours>Checking hours…</span>
           <dl class="ticket__meta">
-            <div><dt>Hotline</dt><dd><a href="tel:+94117555517">+94 11 755 5517</a></dd></div>
-            <div><dt>Open</dt><dd>Mon–Sun · 8.00am–6.30pm</dd></div>
+            <div><dt data-i18n="hotline">Hotline</dt><dd><a href="tel:+94117555517">+94 11 755 5517</a></dd></div>
+            <div><dt data-i18n="open">Open</dt><dd data-i18n="hours_dd">Mon–Sun · 8.00am–6.30pm</dd></div>
           </dl>
-          <a class="ticket__link" href="https://www.google.com/maps/search/?api=1&query=LaundroPlus+Cinnamon+Grand+Colombo" target="_blank" rel="noopener">Get directions →</a>
+          <a class="ticket__link" href="https://www.google.com/maps/search/?api=1&query=LaundroPlus+Cinnamon+Grand+Colombo" target="_blank" rel="noopener" data-i18n="directions">Get directions →</a>
         </article>
         <article class="ticket">
           <div class="ticket__top"><span class="mono">Colombo 07</span><span class="ticket__hole" aria-hidden="true"></span></div>
@@ -334,21 +334,21 @@
           <p>32 Ward Place, Colombo 07</p>
           <span class="status" data-hours>Checking hours…</span>
           <dl class="ticket__meta">
-            <div><dt>Hotline</dt><dd><a href="tel:+94117555518">+94 11 755 5518</a></dd></div>
-            <div><dt>Open</dt><dd>Mon–Sun · 8.00am–6.30pm</dd></div>
+            <div><dt data-i18n="hotline">Hotline</dt><dd><a href="tel:+94117555518">+94 11 755 5518</a></dd></div>
+            <div><dt data-i18n="open">Open</dt><dd data-i18n="hours_dd">Mon–Sun · 8.00am–6.30pm</dd></div>
           </dl>
-          <a class="ticket__link" href="https://www.google.com/maps/search/?api=1&query=LaundroPlus+32+Ward+Place+Colombo+07" target="_blank" rel="noopener">Get directions →</a>
+          <a class="ticket__link" href="https://www.google.com/maps/search/?api=1&query=LaundroPlus+32+Ward+Place+Colombo+07" target="_blank" rel="noopener" data-i18n="directions">Get directions →</a>
         </article>
         <article class="ticket ticket--private">
-          <div class="ticket__top"><span class="mono">Residents only</span><span class="ticket__hole" aria-hidden="true"></span></div>
+          <div class="ticket__top"><span class="mono" data-i18n="residents">Residents only</span><span class="ticket__hole" aria-hidden="true"></span></div>
           <h3>Trizen</h3>
           <p>Tower 1, M floor</p>
           <span class="status" data-hours>Checking hours…</span>
           <dl class="ticket__meta">
-            <div><dt>Access</dt><dd>Trizen apartment residents</dd></div>
-            <div><dt>Open</dt><dd>Mon–Sun · 8.00am–6.30pm</dd></div>
+            <div><dt data-i18n="access">Access</dt><dd data-i18n="trizen_res">Trizen apartment residents</dd></div>
+            <div><dt data-i18n="open">Open</dt><dd data-i18n="hours_dd">Mon–Sun · 8.00am–6.30pm</dd></div>
           </dl>
-          <span class="ticket__link ticket__link--muted">Private outlet</span>
+          <span class="ticket__link ticket__link--muted" data-i18n="private">Private outlet</span>
         </article>
       </div>
     </div>
@@ -359,8 +359,9 @@
     <div class="wrap">
       <header class="section__head reviews__head">
         <div>
-          <p class="eyebrow eyebrow--dark">Reviews</p>
-          <h2 id="reviews-title">In our clients’ <em>own words.</em></h2>
+          <p class="eyebrow eyebrow--dark" data-i18n="nav_reviews">Reviews</p>
+          <h2 id="reviews-title" data-i18n="rev_title">In our clients’ <em>own words.</em></h2>
+          <a class="reviews__google" href="https://www.google.com/maps/place/Laundro+Plus+Laundry+-+Cinnamon+Grand/@6.917793,79.8479038,17z/data=!4m8!3m7!1s0x3ae259004741ec17:0x6d810d8b8de10559!8m2!3d6.917793!4d79.8479038!9m1!1b1!16s%2Fg%2F11vx0xz1d2" target="_blank" rel="noopener"><b>4.9</b><span class="stars" aria-hidden="true">★★★★★</span><span data-i18n="rev_google">161 Google reviews · Cinnamon Grand</span><span aria-hidden="true">→</span></a>
         </div>
         <div class="reviews__ctrl">
           <button class="round" data-dir="-1" aria-label="Previous reviews">←</button>
@@ -369,6 +370,11 @@
       </header>
     </div>
     <div class="reviews__track" tabindex="0" aria-label="Customer reviews, scroll horizontally">
+      <figure class="quote"><blockquote>“As someone with a busy work schedule, convenience is really important to me, and Laundro Plus has been a great help. The service is reliable, my clothes are always cleaned and pressed to a high standard, and I especially appreciate receiving a message when my laundry is ready for collection. It saves me time and makes planning my day much easier. Professional service, friendly staff, and excellent quality. Definitely worth it!”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Sanduni Yapa<span class="quote__src" data-i18n="rev_src">Google review</span></figcaption></figure>
+      <figure class="quote"><blockquote>“This is one of the best laundry services I’ve used. The entire process was smooth, convenient, and stress-free. The staff are polite, helpful, and always greet customers with a smile. My clothes were returned looking spotless, smelling fresh, and carefully packed. I noticed that even my white clothes looked brighter, and all my garments were handled with great care. Their turnaround time was quick without compromising on quality, and the pricing is fair. It’s rare to find a business that consistently delivers such excellent service. I can confidently recommend this place to anyone who wants dependable and professional laundry services 👍”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Thushmini Kaushalya<span class="quote__src" data-i18n="rev_src">Google review</span></figcaption></figure>
+      <figure class="quote"><blockquote>“I’ve been using this laundry service regularly, and I’m very happy with the quality. The staff are always friendly and welcoming, and they take the time to understand any special requests. My clothes are returned clean, fresh, neatly folded, and always on time. I’ve never had any issues with missing or damaged items. Highly recommended!”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Chathura Siriwardana<span class="quote__src" data-i18n="rev_src">Google review</span></figcaption></figure>
+      <figure class="quote"><blockquote>“Honestly the best laundry service around! I dropped off a whole bunch of delicate outfits for a dance show we were organizing, and the team did an amazing job. They handled the delicate fabrics with so much care. Everything was neatly packed and looked pristine for the stage. Will definitely be a regular customer from now on!”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Kumuthu Thilakna<span class="quote__src" data-i18n="rev_src">Google review</span></figcaption></figure>
+      <figure class="quote"><blockquote>“Excellent laundry service! My clothes are always returned clean, fresh, and perfectly pressed. I really appreciate the message they send when my laundry is ready for collection—it makes the whole process so convenient. Friendly staff, reliable service, and definitely worth it. Highly recommend LaundroPlus!”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Achintha Heshan<span class="quote__src" data-i18n="rev_src">Google review</span></figcaption></figure>
       <figure class="quote"><blockquote>“They complete everything within a maximum of three hours. Since I’m always travelling, I rely on them for last-minute laundry. The staff are friendly and the service is very convenient.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Shane Shantol</figcaption></figure>
       <figure class="quote"><blockquote>“Best laundry in town. Great staff, ample parking, premium output. Fabric is soft, smells great and is well packed, with a quick turnaround.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Sanjay Weerakoon</figcaption></figure>
       <figure class="quote"><blockquote>“I was truly impressed by the team’s quick response, sincere effort and kindness in arranging to send my T-shirt back to Japan. A trustworthy and caring service.”</blockquote><figcaption><span class="stars" aria-label="5 out of 5">★★★★★</span>Tomoyo</figcaption></figure>
@@ -385,43 +391,43 @@
   <section class="contact section" id="contact" aria-labelledby="contact-title">
     <div class="wrap contact__grid">
       <div>
-        <p class="eyebrow eyebrow--dark">Contact</p>
-        <h2 id="contact-title">Tell us what <em>needs care.</em></h2>
-        <p class="section__lede">Message us on WhatsApp for the fastest reply, or call the hotline.</p>
+        <p class="eyebrow eyebrow--dark" data-i18n="nav_contact">Contact</p>
+        <h2 id="contact-title" data-i18n="con_title">Tell us what <em>needs care.</em></h2>
+        <p class="section__lede" data-i18n="con_lede">Message us on WhatsApp for the fastest reply, or call the hotline.</p>
         <dl class="details">
-          <div><dt>Head office</dt><dd>331 Park Road, Colombo 05</dd></div>
-          <div><dt>Hotline</dt><dd><a href="tel:+94117555515">+94 11 755 5515</a></dd></div>
-          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/94742555515" target="_blank" rel="noopener">+94 74 255 5515</a></dd></div>
-          <div><dt>Email</dt><dd><a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a></dd></div>
-          <div><dt>Hours</dt><dd>Mon–Sun · 8.00am–6.30pm</dd></div>
+          <div><dt data-i18n="head_office">Head office</dt><dd>331 Park Road, Colombo 05</dd></div>
+          <div><dt data-i18n="hotline">Hotline</dt><dd><a href="tel:+94117555515">+94 11 755 5515</a></dd></div>
+          <div><dt data-i18n="nav_wa">WhatsApp</dt><dd><a href="https://wa.me/94742555515" target="_blank" rel="noopener">+94 74 255 5515</a></dd></div>
+          <div><dt data-i18n="email">Email</dt><dd><a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a></dd></div>
+          <div><dt data-i18n="hours">Hours</dt><dd data-i18n="hours_dd">Mon–Sun · 8.00am–6.30pm</dd></div>
         </dl>
       </div>
       <form class="form" id="contact-form" novalidate>
         <div class="field">
-          <label for="f-name">Your name</label>
+          <label for="f-name" data-i18n="your_name">Your name</label>
           <input id="f-name" name="name" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="f-phone">Phone number</label>
+          <label for="f-phone" data-i18n="phone">Phone number</label>
           <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
         </div>
         <fieldset class="field">
-          <legend>What do you need?</legend>
+          <legend data-i18n="need">What do you need?</legend>
           <div class="chips">
-            <label><input type="radio" name="service" value="Washing" checked><span>Washing</span></label>
-            <label><input type="radio" name="service" value="Dry cleaning"><span>Dry cleaning</span></label>
-            <label><input type="radio" name="service" value="Pressing"><span>Pressing</span></label>
-            <label><input type="radio" name="service" value="Express service"><span>Express</span></label>
-            <label><input type="radio" name="service" value="For business"><span>Business account</span></label>
+            <label><input type="radio" name="service" value="Washing" checked><span data-i18n="washing">Washing</span></label>
+            <label><input type="radio" name="service" value="Dry cleaning"><span data-i18n="drycleaning">Dry cleaning</span></label>
+            <label><input type="radio" name="service" value="Pressing"><span data-i18n="pressing">Pressing</span></label>
+            <label><input type="radio" name="service" value="Express service"><span data-i18n="sp_express">Express</span></label>
+            <label><input type="radio" name="service" value="For business"><span data-i18n="biz_acc">Business account</span></label>
           </div>
         </fieldset>
         <div class="field">
-          <label for="f-msg">Message</label>
-          <textarea id="f-msg" name="message" rows="4" placeholder="For example: two suits and a silk dress, needed by Friday"></textarea>
+          <label for="f-msg" data-i18n="message">Message</label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="For example: two suits and a silk dress, needed by Friday" data-i18n-ph="ph_msg"></textarea>
         </div>
         <p class="form__error" id="form-error" role="alert"></p>
-        <button class="btn btn--wa btn--block" type="submit"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> Send on WhatsApp</button>
-        <p class="form__note">Opens WhatsApp with your message ready to send. Prefer email? <a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a></p>
+        <button class="btn btn--wa btn--block" type="submit"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> <span data-i18n="send_wa">Send on WhatsApp</span></button>
+        <p class="form__note" data-i18n="form_note">Opens WhatsApp with your message ready to send. Prefer email? <a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a></p>
       </form>
     </div>
   </section>
@@ -430,10 +436,10 @@
 <footer class="footer">
   <div class="wrap">
     <div class="footer__top">
-      <p class="footer__line">Fine fabric deserves <em>fine care.</em></p>
+      <p class="footer__line" data-i18n="foot_line">Fine fabric deserves <em>fine care.</em></p>
       <div class="footer__cta">
-        <a class="btn btn--wa" href="https://wa.me/94742555515" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> WhatsApp us</a>
-        <a class="btn btn--ghost" href="tel:+94117555515">Call +94 11 755 5515</a>
+        <a class="btn btn--wa" href="https://wa.me/94742555515" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg> <span data-i18n="foot_wa">WhatsApp us</span></a>
+        <a class="btn btn--ghost" href="tel:+94117555515" data-i18n="foot_call">Call +94 11 755 5515</a>
       </div>
     </div>
 
@@ -442,7 +448,7 @@
         <a class="footer__logo" href="#top" aria-label="LaundroPlus, back to top">
           <img src="img/logo.png" alt="" width="52" height="52"><span>LaundroPlus</span>
         </a>
-        <p>Premium laundry and dry cleaning in Colombo. Every garment inspected by hand.</p>
+        <p data-i18n="foot_about">Premium laundry and dry cleaning in Colombo. Every garment inspected by hand.</p>
         <div class="footer__social">
           <a href="https://www.instagram.com/laundropluslaundry/" target="_blank" rel="noopener" aria-label="LaundroPlus on Instagram">
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
@@ -460,47 +466,48 @@
       </div>
 
       <nav class="footer__col" aria-label="Footer">
-        <p class="footer__head">Explore</p>
-        <a href="#services">Services</a>
-        <a href="#business">For business</a>
-        <a href="#outlets">Outlets</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-        <a href="careers.html">Careers</a>
-        <a href="terms.html">Terms and conditions</a>
+        <p class="footer__head" data-i18n="explore">Explore</p>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#business" data-i18n="nav_business">For business</a>
+        <a href="#outlets" data-i18n="nav_outlets">Outlets</a>
+        <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+        <a href="careers.html" data-i18n="nav_careers">Careers</a>
+        <a href="terms.html" data-i18n="terms">Terms and conditions</a>
       </nav>
 
       <div class="footer__col">
-        <p class="footer__head">Outlets</p>
+        <p class="footer__head" data-i18n="nav_outlets">Outlets</p>
         <p><strong>Cinnamon Grand</strong><br>77 Galle Road, Colombo 05<br><a href="tel:+94117555517">+94 11 755 5517</a></p>
         <p><strong>Ward Place</strong><br>32 Ward Place, Colombo 07<br><a href="tel:+94117555518">+94 11 755 5518</a></p>
         <p><strong>Trizen</strong><br>Tower 1, M floor<br>Residents only</p>
       </div>
 
       <div class="footer__col">
-        <p class="footer__head">Contact</p>
+        <p class="footer__head" data-i18n="nav_contact">Contact</p>
         <p>331 Park Road, Colombo 05</p>
         <p><a href="tel:+94117555515">+94 11 755 5515</a><br><a href="https://wa.me/94742555515" target="_blank" rel="noopener">WhatsApp +94 74 255 5515</a><br><a href="mailto:info@laundroplus.lk">info@laundroplus.lk</a></p>
-        <p class="footer__hours">Open every day<br>8.00am – 6.30pm</p>
+        <p class="footer__hours" data-i18n="open_every">Open every day<br>8.00am – 6.30pm</p>
       </div>
     </div>
 
     <div class="footer__base">
-      <p>© <span id="year">2026</span> LaundroPlus. All rights reserved.</p>
-      <p>Designed and managed by <strong>LaundroPlus IT</strong></p>
+      <p data-i18n="rights">© <span id="year">2026</span> LaundroPlus. All rights reserved.</p>
+      <p data-i18n="designed">Designed and managed by <strong>LaundroPlus IT</strong></p>
     </div>
   </div>
 </footer>
 
 <a class="fab" href="https://wa.me/94742555515" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="26" height="26"><use href="#ic-wa"/></svg></a>
 
+<script src="i18n.js?v=202610211149"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="script.js?v=202610191215"></script>
+<script src="script.js?v=202610211149"></script>
 <script src="motion.js?v=202610181619"></script>
 <!-- Chat assistant: set data-endpoint to your deployed Worker URL + /chat to switch it on -->
 <!-- Font switcher: loads only when previewing on this computer, never on the live website -->
 <script>if (location.hostname === 'localhost') { var s = document.createElement('script'); s.src = 'font-switcher.js'; document.body.appendChild(s); }</script>
-<script src="chat.js?v=202610181634" data-endpoint="https://laundroplus-agent.laundroplus-agent.workers.dev/chat"></script>
+<script src="chat.js?v=202610211149" data-endpoint="https://laundroplus-agent.laundroplus-agent.workers.dev/chat"></script>
 </body>
 </html>

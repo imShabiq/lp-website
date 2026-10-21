@@ -78,7 +78,7 @@
     const name = (data.get('name') || '').trim();
     const nameInput = form.querySelector('#f-name');
     if (!name) {
-      error.textContent = 'Enter your name so we know who we’re replying to.';
+      error.textContent = T('err_name');
       nameInput.setAttribute('aria-invalid', 'true');
       nameInput.focus();
       return;
@@ -98,6 +98,11 @@
     window.open(`https://wa.me/94742555515?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
   });
 
+  // Language helpers from i18n.js
+  const T = (k, v) => (window.LP ? window.LP.t(k, v) : k);
+  const S = (k) => (window.LP ? window.LP.s(k) : k);
+  const lang = () => (window.LP ? window.LP.lang : 'en');
+
   // Speed selector: live "ready by" estimate in Colombo time
   const speedStops = [...document.querySelectorAll('#speed .stop')];
   if (speedStops.length) {
@@ -105,34 +110,38 @@
     const WA = 'https://wa.me/94742555515?text=';
     const colombo = () => new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' }));
     const mins = (d) => d.getHours() * 60 + d.getMinutes();
-    const fmtTime = (d) => d.toLocaleTimeString('en-GB', { hour: 'numeric', minute: '2-digit', hour12: true }).replace(' ', '').replace(':', '.').toLowerCase();
+    const fmtTime = (d) => (lang() === 'en'
+      ? d.toLocaleTimeString('en-GB', { hour: 'numeric', minute: '2-digit', hour12: true }).replace(' ', '').replace(':', '.').toLowerCase()
+      : d.toLocaleTimeString(window.LP.locale, { hour: 'numeric', minute: '2-digit' }));
     const fmtDay = (d, now) => {
       const diff = Math.round((new Date(d).setHours(0, 0, 0, 0) - new Date(now).setHours(0, 0, 0, 0)) / 864e5);
-      return diff === 0 ? 'today' : diff === 1 ? 'tomorrow' : d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short' });
+      return diff === 0 ? T('today') : diff === 1 ? T('tomorrow') : d.toLocaleDateString(window.LP ? window.LP.locale : 'en-GB', { weekday: 'long', day: 'numeric', month: 'short' });
     };
     const atOpen = (d, addDays) => { const x = new Date(d); x.setDate(x.getDate() + addDays); x.setHours(8, 0, 0, 0); return x; };
     const dropOff = (n) => (mins(n) < OPEN ? atOpen(n, 0) : mins(n) >= CLOSE ? atOpen(n, 1) : n);
     const NOON = 12 * 60, PRESS_LAST = 17 * 60 + 30;
     const SPEEDS = [
-      { name: 'Standard', charge: 'Standard price', calc: (n) => { const r = new Date(dropOff(n)); r.setDate(r.getDate() + 2); return `Ready <em>${fmtDay(r, n)}</em>, after 48 working hours`; } },
-      { name: 'One-day', charge: '+25% on the standard price', calc: (n) => (mins(n) >= OPEN && mins(n) < CLOSE ? 'Ready <em>tomorrow</em> after 5.30pm' : `Hand over <em>${mins(n) < OPEN ? 'today' : 'tomorrow'}</em> from 8.00am, ready the next day after 5.30pm`) },
-      { name: 'Express', charge: '+50% on the standard price', calc: (n) => {
+      { name: 'Standard', key: 'sp_standard', charge: 'ch_standard', calc: (n) => { const r = new Date(dropOff(n)); r.setDate(r.getDate() + 2); return T('sp_standard_ready', { day: fmtDay(r, n) }); } },
+      { name: 'One-day', key: 'sp_oneday', charge: 'ch_oneday', calc: (n) => (mins(n) >= OPEN && mins(n) < CLOSE ? T('sp_oneday_ready') : T('sp_oneday_handover', { day: mins(n) < OPEN ? T('today') : T('tomorrow') })) },
+      { name: 'Express', key: 'sp_express', charge: 'ch_express', calc: (n) => {
           const m = mins(n);
-          if (m >= OPEN && m < NOON) return 'Ready <em>today</em> after 6.00pm';
+          if (m >= OPEN && m < NOON) return T('sp_express_ready');
           const d = m < OPEN ? atOpen(n, 0) : atOpen(n, 1);
-          return `Hand over <em>${fmtDay(d, n)}</em> between 8.00am and 12 noon, ready the same day after 6.00pm`; } },
-      { name: 'Urgent pressing', charge: '+100% (double) the standard price · pressing only', calc: (n) => {
+          return T('sp_express_handover', { day: fmtDay(d, n) }); } },
+      { name: 'Urgent pressing', key: 'sp_urgent', charge: 'ch_urgent', calc: (n) => {
           const m = mins(n);
-          if (m >= OPEN && m < PRESS_LAST) return `Pressed and ready <em>by ${fmtTime(new Date(n.getTime() + 3 * 36e5))}</em> today`;
+          if (m >= OPEN && m < PRESS_LAST) return T('sp_urgent_ready', { time: fmtTime(new Date(n.getTime() + 3 * 36e5)) });
           const d = m < OPEN ? atOpen(n, 0) : atOpen(n, 1);
-          return `Hand over <em>${fmtDay(d, n)}</em> between 8.00am and 5.30pm, ready 3 hours later`; } },
+          return T('sp_urgent_handover', { day: fmtDay(d, n) }); } },
     ];
+    let current = 0;
     const pickSpeed = (i) => {
+      current = i;
       speedStops.forEach((s, j) => s.setAttribute('aria-checked', String(j === i)));
       document.getElementById('speed-fill').style.width = `${(i / 3) * 75}%`;
       const s = SPEEDS[i];
       document.getElementById('speed-ready').innerHTML = s.calc(colombo());
-      document.getElementById('speed-charge').innerHTML = `<b>${s.name}</b>${s.charge}`;
+      document.getElementById('speed-charge').innerHTML = `<b>${S(s.key)}</b>${T(s.charge)}`;
       document.getElementById('speed-book').href = WA + encodeURIComponent(`Hello LaundroPlus, I'd like ${s.name} service.`);
     };
     speedStops.forEach((s, i) => {
@@ -146,6 +155,7 @@
       });
     });
     pickSpeed(0);
+    document.addEventListener('lp:lang', () => pickSpeed(current));
   }
 
   // Outlet status: "Open now" / "Closed now" in Colombo time (daily 8.00am to 6.30pm)
@@ -155,12 +165,30 @@
       const t = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' }));
       const m = t.getHours() * 60 + t.getMinutes();
       const open = m >= 8 * 60 && m < 18 * 60 + 30;
-      const text = open ? 'Open now · closes 6.30pm' : `Closed now · opens ${m < 8 * 60 ? 'today' : 'tomorrow'} 8.00am`;
+      const text = open ? T('status_open') : T(m < 8 * 60 ? 'status_closed_today' : 'status_closed_tomorrow');
       hoursEls.forEach((el) => { el.textContent = text; el.classList.toggle('is-closed', !open); });
     };
     setStatus();
     setInterval(setStatus, 60000);
+    document.addEventListener('lp:lang', setStatus);
   }
+
+  // Long reviews: clamp to 6 lines with a "Read more" toggle (full text stays in the page)
+  document.querySelectorAll('.quote blockquote').forEach((q) => {
+    q.classList.add('is-clamped');
+    if (q.scrollHeight <= q.clientHeight + 2) { q.classList.remove('is-clamped'); return; }
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'quote__more'; b.textContent = T('read_more'); b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', () => {
+      const open = q.classList.toggle('is-clamped') === false;
+      b.textContent = open ? T('show_less') : T('read_more');
+      b.setAttribute('aria-expanded', String(open));
+    });
+    q.after(b);
+  });
+  document.addEventListener('lp:lang', () => document.querySelectorAll('.quote__more').forEach((b) => {
+    b.textContent = b.getAttribute('aria-expanded') === 'true' ? T('show_less') : T('read_more');
+  }));
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();

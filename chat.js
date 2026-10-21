@@ -5,7 +5,18 @@
   const endpoint = (script && script.dataset.endpoint || '').trim();
   if (!endpoint) return;
 
-  const GREETING = 'Ayubowan! I’m the LaundroPlus web assistant. How can I help with your clothes today?';
+  // Text comes from i18n.js in the visitor's chosen language (English if it is missing)
+  const EN = {
+    chat_launch: 'Ask us', chat_sub: 'Web assistant · replies in seconds', chat_placeholder: 'Type your question',
+    chat_note: 'Automated assistant. For orders and prices, our team will follow up.',
+    chat_greeting: 'Ayubowan! I’m the LaundroPlus web assistant. How can I help with your clothes today?',
+    chat_hello: 'Ayubowan! Welcome to LaundroPlus 🙏', chat_text: 'I’m the LaundroPlus web assistant. How can I help with your clothes today?',
+    chip_hours: 'Opening hours', chip_express: 'Express service', chip_outlet: 'Nearest outlet',
+    q_hours: 'What are your opening hours?', q_express: 'How does your express service work?', q_outlet: 'Where are your outlets?',
+    chat_wa: 'Continue on WhatsApp', chat_down: 'The assistant is unavailable right now. Please message us on WhatsApp.',
+    chat_offline: 'We couldn’t connect. Check your internet connection, or message us on WhatsApp.',
+  };
+  const T = (k) => (window.LP ? window.LP.t(k) : EN[k]);
   const WA_NUMBER = '94742555515';
   const STORE_KEY = 'lp-chat';
 
@@ -19,7 +30,7 @@
   launcher.type = 'button';
   launcher.setAttribute('aria-expanded', 'false');
   launcher.setAttribute('aria-controls', 'chat-panel');
-  launcher.innerHTML = '<span class="chat-launch__dot" aria-hidden="true"></span>Ask us';
+  launcher.innerHTML = `<span class="chat-launch__dot" aria-hidden="true"></span><span class="chat-launch__text">${T('chat_launch')}</span>`;
 
   const panel = document.createElement('section');
   panel.className = 'chat';
@@ -29,18 +40,18 @@
   panel.innerHTML = `
     <header class="chat__head">
       <img src="img/logo.png" alt="" width="34" height="34">
-      <div><p class="chat__title">LaundroPlus</p><p class="chat__sub">Web assistant · replies in seconds</p></div>
+      <div><p class="chat__title">LaundroPlus</p><p class="chat__sub">${T('chat_sub')}</p></div>
       <button class="chat__close" type="button" aria-label="Close chat">×</button>
     </header>
     <div class="chat__log" role="log" aria-live="polite"></div>
     <form class="chat__form">
       <label class="sr-only" for="chat-input">Your message</label>
-      <textarea id="chat-input" rows="1" maxlength="1000" placeholder="Type your question"></textarea>
+      <textarea id="chat-input" rows="1" maxlength="1000" placeholder="${T('chat_placeholder')}"></textarea>
       <button class="chat__send" type="submit" aria-label="Send message">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </form>
-    <p class="chat__note">Automated assistant. For orders and prices, our team will follow up.</p>`;
+    <p class="chat__note">${T('chat_note')}</p>`;
   document.body.append(panel, launcher);
 
   const log = panel.querySelector('.chat__log');
@@ -65,12 +76,21 @@
     a.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
     a.target = '_blank';
     a.rel = 'noopener';
-    a.textContent = 'Continue on WhatsApp';
+    a.textContent = T('chat_wa');
     log.appendChild(a);
     log.scrollTop = log.scrollHeight;
   };
 
-  bubble('assistant', GREETING);
+  const greetingEl = bubble('assistant', T('chat_greeting'));
+  // Switching language updates the chat's own labels and its opening greeting
+  document.addEventListener('lp:lang', () => {
+    launcher.querySelector('.chat-launch__text').textContent = T('chat_launch');
+    panel.querySelector('.chat__sub').textContent = T('chat_sub');
+    panel.querySelector('.chat__note').textContent = T('chat_note');
+    input.placeholder = T('chat_placeholder');
+    greetingEl.textContent = T('chat_greeting');
+    log.querySelectorAll('.msg__wa').forEach((a) => { a.textContent = T('chat_wa'); });
+  });
   messages.forEach((m) => bubble(m.role, m.content));
 
   const setOpen = (open) => {
@@ -117,7 +137,7 @@
       const data = await res.json().catch(() => ({}));
       typing.remove();
       if (!res.ok || !data.reply) {
-        bubble('assistant', data.error || 'The assistant is unavailable right now. Please message us on WhatsApp.');
+        bubble('assistant', data.error || T('chat_down'));
         handoffButton();
       } else {
         messages.push({ role: 'assistant', content: data.reply });
@@ -127,7 +147,7 @@
       }
     } catch (err) {
       typing.remove();
-      bubble('assistant', 'We couldn’t connect. Check your internet connection, or message us on WhatsApp.');
+      bubble('assistant', T('chat_offline'));
       handoffButton();
     } finally {
       busy = false;
@@ -149,19 +169,14 @@
       <button class="chat-teaser__close" type="button" aria-label="Close message">×</button>
       <div class="chat-teaser__typing" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="chat-teaser__body">
-        <p class="chat-teaser__hello">Ayubowan! Welcome to LaundroPlus 🙏</p>
-        <p class="chat-teaser__text">I’m the LaundroPlus web assistant. How can I help with your clothes today?</p>
+        <p class="chat-teaser__hello">${T('chat_hello')}</p>
+        <p class="chat-teaser__text">${T('chat_text')}</p>
       </div>
       <div class="chat-teaser__chips">
-        <button type="button">Opening hours</button>
-        <button type="button">Express service</button>
-        <button type="button">Nearest outlet</button>
+        <button type="button" data-q="q_hours">${T('chip_hours')}</button>
+        <button type="button" data-q="q_express">${T('chip_express')}</button>
+        <button type="button" data-q="q_outlet">${T('chip_outlet')}</button>
       </div>`;
-    const QUESTIONS = {
-      'Opening hours': 'What are your opening hours?',
-      'Express service': 'How does your express service work?',
-      'Nearest outlet': 'Where are your outlets?',
-    };
     let hideTimer;
     const hideTeaser = () => {
       clearTimeout(hideTimer);
@@ -178,7 +193,7 @@
       btn.addEventListener('click', () => {
         hideTeaser();
         setOpen(true);
-        send(QUESTIONS[btn.textContent]);
+        send(T(btn.dataset.q));
       });
     });
     launcher.addEventListener('click', hideTeaser);
